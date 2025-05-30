@@ -100,70 +100,49 @@ const timelineData = [
         icon: UserGroupIcon,
         details: []
       },
-      {
-        title: "Welcome Dinner",
-        time: "(18.30-19.30)",
-        icon: UserGroupIcon,
-        details: []
-      },
-      {
-        title: "High Level Meeting",
-        time: "(19.30-21.30)",
-        icon: MessageCircleIcon,
-        details: [
-          "• Evaluasi Pelaksanaan Hasil Kesepakatan Konreg PDRB Kasulampua Tahun 2024",
-          "• Tindak Lanjut Evaluasi dan Perumusan Kesepakatan selanjutnya",
-          "• Penentuan Tuan Rumah Konreg PDRB Kasulampua selanjutnya"
-        ]
-      }
     ]
   },
   {
     date: "12 Juni 2025",
     events: [
       {
-        title: "Pembukaan Konreg",
-        time: "(08.30-10.00)",
-        icon: MessageCircleIcon,
+        title: "Registrasi Peserta",
+        time: "(08.30-09.00)",
+        icon: UserGroupIcon,
         details: []
       },
       {
-        title: "Keynote Speech",
-        time: "(10.15-10.30)",
+        title: "Pembukaan Konreg",
+        time: "(09.00-10.00)",
         icon: MessageCircleIcon,
         details: [
-          "Kepala BPS RI"
+          "Opening Speech dan Launching Portal Data Kasulampua"
         ]
       },
       {
         title: "Pemaparan Materi",
-        time: "(10.30-12.00)",
+        time: "(10.15-12.30)",
         icon: MessageCircleIcon,
         details: [
-          "Bappenas, BPS, Bank Indonesia, Kementerian Keuangan, Kementerian Pertanian, Pelaku Usaha"
+          "Bappenas, BPS, Bank Indonesia, Kementerian Keuangan"
         ]
       },
       {
-        title: "Kunjungan ke Stand UMKM",
-        time: "",
-        icon: MapIcon,
+        title: "Pemaparan Hasil Perumusan Kesepakatan",
+        time: "(13.30-14.30)",
+        icon: MessageCircleIcon,
         details: []
-      }
+      },
+  
     ]
   },
   {
     date: "13 Juni 2025",
     events: [
       {
-        title: "Kunjungan ke Geopark Meratus",
+        title: "Kepulangan Peserta",
         time: "",
-        icon: MapIcon,
-        details: []
-      },
-      {
-        title: "Kunjungan ke CBS Martapura",
-        time: "",
-        icon: MapIcon,
+        icon: UserGroupIcon,
         details: []
       }
     ]
@@ -252,7 +231,7 @@ const TimelineComponent = () => {
                         {/* Event icon */}
                         <div className="w-8 h-8 rounded-full flex items-center justify-center text-white mr-3 flex-shrink-0 mt-0.5">
                           <div className={`w-8 h-8 rounded-full flex items-center justify-center ${iconType}`}>
-                            <EventIcon className="w-4 h-4" />
+                            <EventIcon className="w-3 h-3" />
                           </div>
                         </div>
                         
@@ -295,6 +274,223 @@ const TimelineComponent = () => {
   );
 };
 
+const ProvinceLogoCarousel = () => {
+  const scrollContainerRef = useRef(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  // Data logo provinsi Kasulampua
+  const provinceLogos = [
+    {
+      name: "Bank Indonesia",
+      logo: "/logo/logo-bi.png",
+      alt: "Logo BI"
+    },
+    {
+      name: "Badan Pusat Statistik",
+      logo: "/logo/logo-bps.png",
+      alt: "Logo BPS"
+    },    
+    {
+      name: "DJPB",
+      logo: "/logo/logo-kemenkeu.png",
+      alt: "Logo DJPB Kemenkeu"
+    },
+    // Kalimantan
+    {
+      name: "Kalimantan Selatan",
+      logo: "/logo/provinces/kalimantan-selatan.png",
+      alt: "Logo Provinsi Kalimantan Selatan"
+    },
+    {
+      name: "Kalimantan Tengah",
+      logo: "/logo/provinces/kalimantan-tengah.png",
+      alt: "Logo Provinsi Kalimantan Tengah"
+    },
+    {
+      name: "Kalimantan Timur",
+      logo: "/logo/provinces/kalimantan-timur.png",
+      alt: "Logo Provinsi Kalimantan Timur"
+    },
+    {
+      name: "Kalimantan Barat",
+      logo: "/logo/provinces/kalimantan-barat.png",
+      alt: "Logo Provinsi Kalimantan Barat"
+    },
+    {
+      name: "Kalimantan Utara",
+      logo: "/logo/provinces/kalimantan-utara.png",
+      alt: "Logo Provinsi Kalimantan Utara"
+    },
+    // Sulawesi
+    {
+      name: "Sulawesi Selatan",
+      logo: "/logo/provinces/sulawesi-selatan.png",
+      alt: "Logo Provinsi Sulawesi Selatan"
+    },
+    {
+      name: "Sulawesi Tengah",
+      logo: "/logo/provinces/sulawesi-tengah.png",
+      alt: "Logo Provinsi Sulawesi Tengah"
+    },
+    {
+      name: "Sulawesi Utara",
+      logo: "/logo/provinces/sulawesi-utara.png",
+      alt: "Logo Provinsi Sulawesi Utara"
+    },
+    {
+      name: "Sulawesi Barat",
+      logo: "/logo/provinces/sulawesi-barat.png",
+      alt: "Logo Provinsi Sulawesi Barat"
+    },
+    {
+      name: "Sulawesi Tenggara",
+      logo: "/logo/provinces/sulawesi-tenggara.png",
+      alt: "Logo Provinsi Sulawesi Tenggara"
+    },
+    // Gorontalo
+    {
+      name: "Gorontalo",
+      logo: "/logo/provinces/gorontalo.png",
+      alt: "Logo Provinsi Gorontalo"
+    },
+    // Maluku
+    {
+      name: "Maluku",
+      logo: "/logo/provinces/maluku.png",
+      alt: "Logo Provinsi Maluku"
+    },
+    {
+      name: "Maluku Utara",
+      logo: "/logo/provinces/maluku-utara.png",
+      alt: "Logo Provinsi Maluku Utara"
+    },
+    // Papua
+    {
+      name: "Papua",
+      logo: "/logo/provinces/papua.png",
+      alt: "Logo Provinsi Papua"
+    },
+    {
+      name: "Papua Barat",
+      logo: "/logo/provinces/papua-barat.png",
+      alt: "Logo Provinsi Papua Barat"
+    },
+    {
+      name: "Papua Selatan",
+      logo: "/logo/provinces/papua-selatan.png",
+      alt: "Logo Provinsi Papua Selatan"
+    },
+    {
+      name: "Papua Barat Daya",
+      logo: "/logo/provinces/papua-barat-daya.png",
+      alt: "Logo Provinsi Papua Barat Daya"
+    },
+    {
+      name: "Papua Pegunungan",
+      logo: "/logo/provinces/papua-pegunungan.png",
+      alt: "Logo Provinsi Papua Pegunungan"
+    },
+    {
+      name: "Papua Tengah",
+      logo: "/logo/provinces/papua-tengah.png",
+      alt: "Logo Provinsi Papua Tengah"
+    }
+  ];
+
+  const handleScroll = () => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      setCanScrollLeft(container.scrollLeft > 0);
+      setCanScrollRight(
+        container.scrollLeft < container.scrollWidth - container.clientWidth - 10
+      );
+    }
+  };
+
+  const scroll = (direction) => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      const scrollAmount = container.clientWidth * 0.75;
+      container.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  return (
+    <section className="py-8 md:py-12 bg-gray-50">
+      <div className="container mx-auto px-3 md:px-4">
+        <h2 className="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-snowymint-900 text-center">
+          Didukung oleh
+        </h2>
+        
+        <div className="relative">
+          {/* Left scroll button */}
+          <button 
+            onClick={() => scroll('left')} 
+            className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow-md ${!canScrollLeft ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100'}`}
+            disabled={!canScrollLeft}
+            style={{ left: '-12px' }}
+          >
+            <ChevronLeftIcon />
+          </button>
+
+          {/* Logo container */}
+          <div 
+            className="overflow-x-auto hide-scrollbar px-8" 
+            ref={scrollContainerRef}
+            onScroll={handleScroll}
+          >
+            <div className="flex space-x-6 md:space-x-8 min-w-min py-4 pt-12 pb-4">
+              {provinceLogos.map((province, index) => (
+                <div 
+                  key={index} 
+                  className="flex-none w-20 h-20 md:w-24 md:h-24 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 flex items-center justify-center p-3 relative group cursor-pointer"
+                >
+                  <img 
+                    src={province.logo} 
+                    alt={province.alt}
+                    className="max-w-full max-h-full object-contain transition-transform duration-200 group-hover:scale-105"
+                  />
+                  
+                  {/* Tooltip */}
+                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-20 pointer-events-none shadow-lg">
+                    {province.name}
+                    {/* Arrow pointing down */}
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          {/* Right scroll button */}
+          <button 
+            onClick={() => scroll('right')} 
+            className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow-md ${!canScrollRight ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100'}`}
+            disabled={!canScrollRight}
+            style={{ right: '-12px' }}
+          >
+            <ChevronRightIcon />
+          </button>
+        </div>
+        
+        <style jsx>{`
+          .hide-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+          }
+          .hide-scrollbar::-webkit-scrollbar {
+            display: none;  /* Chrome, Safari and Opera */
+          }
+        `}</style>
+      </div>
+    </section>
+  );
+};
+
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -310,12 +506,14 @@ export default function Home() {
       <header className="bg-snowymint-100 text-gray-800 shadow-sm fixed top-0 left-0 right-0 z-50">
         <div className="container mx-auto px-3 py-2">
           <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <img 
-                src="/logo/logo-kasulampua-warna.svg" 
-                alt="KONREG PDRB KASULAMPUA Logo" 
-                className="h-8 md:h-12"
-              />
+          <div className="flex items-center">
+              <Link href="/">
+                <img 
+                  src="/logo/logo-kasulampua-warna.svg" 
+                  alt="KONREG PDRB KASULAMPUA Logo" 
+                  className="h-8 md:h-12"
+                />
+              </Link>
             </div>
             
             {/* Desktop Navigation */}
@@ -327,9 +525,15 @@ export default function Home() {
               <Link href="/akomodasi" className="font-medium text-gray-800 hover:text-snowymint-900 transition-colors">
                 Akomodasi
               </Link>
-              <a href="#wisata" className="font-medium text-gray-800 hover:text-snowymint-900 transition-colors">Wisata</a>
-              <a href="#galeri" className="font-medium text-gray-800 hover:text-snowymint-900 transition-colors">Galeri</a>
-              <a href="#kontak" className="font-medium text-gray-800 hover:text-snowymint-900 transition-colors">Kontak</a>
+              <Link href="/wisata" className="font-medium text-gray-800 hover:text-snowymint-900 transition-colors">
+                Wisata
+              </Link>
+              <Link href="/galeri" className="font-medium text-gray-800 hover:text-snowymint-900 transition-colors">
+                Galeri
+              </Link>
+              <Link href="/tentang" className="font-medium text-gray-800 hover:text-snowymint-900 transition-colors">
+                Tentang
+              </Link>
             </nav>
             
             {/* Mobile Menu Button */}
@@ -344,16 +548,21 @@ export default function Home() {
           {mobileMenuOpen && (
             <nav className="pt-3 pb-1 space-y-1 md:hidden">
               <a href="#beranda" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">Beranda</a>
-              <a href="#kegiatan" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">Kegiatan</a>
               <Link href="/kegiatan" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">
                 Kegiatan
               </Link>
               <Link href="/akomodasi" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">
                 Akomodasi
               </Link>
-              <a href="#wisata" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">Wisata</a>
-              <a href="#galeri" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">Galeri</a>
-              <a href="#kontak" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">Kontak</a>
+              <Link href="/wisata" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">
+                Wisata
+              </Link>
+              <Link href="/galeri" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">
+                Galeri
+              </Link>
+              <Link href="/tentang" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">
+                Tentang
+              </Link>
             </nav>
           )}
         </div>
@@ -375,7 +584,7 @@ export default function Home() {
         <div className="container mx-auto px-3 py-4 md:py-10 relative z-10">
           <div className="max-w-xl mx-auto text-center">
           <div className="flex justify-center items-center space-x-3 mb-1">
-            <div className="h-8 w-8 md:h-12 md:w-12 flex items-center justify-center">
+            <div className="h-10 w-10 md:h-14 md:w-14 flex items-center justify-center">
               <img 
                 src="/logo/logo-bi.png" 
                 alt="Logo Bank Indonesia" 
@@ -396,13 +605,20 @@ export default function Home() {
                 className="w-full h-full object-contain"
               />
             </div>
+            <div className="h-10 w-10 md:h-14 md:w-14 flex items-center justify-center"> {/* Rasio aspek berbeda */}
+              <img 
+                src="/logo/logo-kemenkeu.png" 
+                alt="Logo Kementerian Keuangan" 
+                className="w-full h-full object-contain"
+              />
+              </div>
           </div>
             <h2 className="text-snowymint-900 text-base md:text-xl font-medium mb-0.5">KONSULTASI REGIONAL PDRB KASULAMPUA</h2>
             <h1 className="text-pattensblue-900 text-4xl md:text-7xl font-bold mb-1 md:mb-2 whitespace-nowrap">PUSAT INFORMASI</h1>
             <p className="text-pattensblue-900 mb-3 md:mb-4 font-normal text-xs md:text-sm max-w-xs mx-auto md:max-w-none">Selamat datang di Pusat Informasi Peserta Konsultasi Regional PDRB Kalimantan, Sulawesi, Maluku, dan Papua (Kasulampua).</p>
             <div className="flex justify-center">
               {/* UPDATED: Increased button size for better visibility and touch targets */}
-              <a href="https://wa.me/6285123456789" className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-medium transition-colors text-center flex items-center justify-center text-sm md:text-base">
+              <a href="https://chat.whatsapp.com/HRd2IOdmqDBKwCZlysHWK4" className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-medium transition-colors text-center flex items-center justify-center text-sm md:text-base">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 mr-2 md:mr-3" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                 </svg>
@@ -444,7 +660,11 @@ export default function Home() {
               <div className="h-6 w-6 md:h-10 md:w-10 rounded-full bg-snowymint-200 text-snowymint-900 flex items-center justify-center mb-2 md:mb-3">
                 <CameraIcon className="w-3 h-3 md:w-5 md:h-5" />
               </div>
-              <h3 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-snowymint-900">Wisata Daerah</h3>
+              <h3 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-snowymint-900">
+                <Link href="/wisata" className="font-medium text-gray-800 hover:text-snowymint-900 transition-colors">
+                Wisata Daerah
+                </Link>
+              </h3>
               <p className="text-gray-600 font-normal text-xs md:text-sm">Rekomendasi tempat wisata untuk mengisi waktu luang selama kegiatan</p>
             </div>
           </div>
@@ -454,77 +674,170 @@ export default function Home() {
 
       {/* Timeline Section */}
       <section className="py-10 bg-green-50" id="kegiatan">
-        <div className="max-w-6xl mx-auto px-4">
+        <div className="max-w-6xl mx-auto px-8">
           <h2 className="text-xl md:text-3xl font-bold text-center mb-4 md:mb-8 text-snowymint-900">Timeline Kegiatan</h2>
           
           {/* Gunakan TimelineComponent yang sudah ada */}
           <TimelineComponent />
           
-          <div className="text-center mt-8">
-            <button className="bg-green-700 hover:bg-green-800 text-white px-6 py-2 rounded-md font-medium transition-colors">
+          <div className="text-center mt-6 md:mt-8">
+            <Link href="/kegiatan" className="bg-snowymint-900 hover:bg-snowymint-950 text-white px-6 py-3 md:px-8 md:py-3 rounded-lg font-medium transition-colors inline-block text-sm md:text-base">
               Lihat Jadwal Lengkap
-            </button>
+            </Link>
           </div>
         </div>
       </section>
-            
+      
+      <ProvinceLogoCarousel />
+
       {/* Footer */}
       <footer className="bg-snowymint-950 text-white py-6 md:py-8">
         <div className="container mx-auto px-3 md:px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            <div>
-              <div className="flex items-center mb-3 justify-center sm:justify-start">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-4">
+            {/* Logo and Description - Full width on mobile */}
+            <div className="col-span-2 md:col-span-1 text-left">
+              <div className="flex items-center justify-start mb-3">
                 <img 
                   src="/logo/logo-kasulampua-warna-putih.svg" 
                   alt="KONREG PDRB KASULAMPUA Logo" 
                   className="h-8 md:h-12"
                 />
               </div>
-              <p className="text-xs text-snowymint-100 mb-3 text-center sm:text-left">Pusat Informasi Peserta Konsultasi Regional PDRB Kalimantan, Sulawesi, Maluku, dan Papua (Kasulampua)</p>
+              <p className="text-sm text-snowymint-100 mb-3">
+                Pusat Informasi Peserta Konsultasi Regional PDRB Kalimantan, Sulawesi, Maluku, dan Papua (Kasulampua)
+              </p>
+
+              {/* Contact Information */}
+              <div>
+                <h3 className="font-bold text-sm md:text-base mb-3">Kontak</h3>
+                <ul className="space-y-3 text-xs md:text-sm">
+                  <li className="flex items-start">
+                    <div className="w-8 h-8 md:w-8 md:h-8 rounded-full bg-snowymint-100 text-snowymint-900 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                      <MapPinIcon className="w-3 h-3 md:w-3 md:h-3" />
+                    </div>
+                    <span className="text-snowymint-100">Sekretariat Konreg PDRB Kasulampua 2025, Jl. Soekarno Hatta/Trikora No 7 Banjarbaru</span>
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-8 h-8 md:w-8 md:h-8 rounded-full bg-snowymint-100 text-snowymint-900 flex items-center justify-center mr-3 flex-shrink-0">
+                      <PhoneIcon className="w-3 h-3 md:w-3 md:h-3 text-white" />
+                    </div>
+                    <span className="text-snowymint-100">0511 6749001</span>
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-8 h-8 md:w-8 md:h-8 rounded-full bg-snowymint-100 text-snowymint-900 flex items-center justify-center mr-3 flex-shrink-0">
+                      <MailIcon className="w-3 h-3 md:w-3 md:h-3 text-white" />
+                    </div>
+                    <span className="text-snowymint-100">bps6300@bps.go.id</span>
+                  </li>
+                </ul>
+              </div>
             </div>
             
-            <div className="mt-0">
-              <h3 className="font-bold text-sm md:text-base mb-2 text-center sm:text-left">Menu</h3>
-              <ul className="space-y-0.5 md:space-y-1 text-center sm:text-left">
-                <li><a href="#beranda" className="text-snowymint-100 hover:text-white text-xs md:text-sm">Beranda</a></li>
-                <li><a href="/kegiatan" className="text-snowymint-100 hover:text-white text-xs md:text-sm">Kegiatan</a></li>
-                <li><a href="/akomodasi" className="text-snowymint-100 hover:text-white text-xs md:text-sm">Akomodasi</a></li>
-                <li><a href="#wisata" className="text-snowymint-100 hover:text-white text-xs md:text-sm">Wisata</a></li>
-                <li><a href="#galeri" className="text-snowymint-100 hover:text-white text-xs md:text-sm">Galeri</a></li>
-                <li><a href="#kontak" className="text-snowymint-100 hover:text-white text-xs md:text-sm">Kontak</a></li>
+            {/* Pemerintah Daerah */}
+            <div className="text-left">
+              <h3 className="font-bold text-sm md:text-base mb-3">Pemerintah Daerah</h3>
+              <ul className="space-y-2 text-xs md:text-sm">
+                <li><a href="https://kalselprov.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Kalimantan Selatan</a></li>
+                <li><a href="https://kalteng.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Kalimantan Tengah</a></li>
+                <li><a href="https://kaltimprov.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Kalimantan Timur</a></li>
+                <li><a href="https://kalbarprov.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Kalimantan Barat</a></li>
+                <li><a href="https://kaltaraprov.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Kalimantan Utara</a></li>
+
+                <li><a href="https://sulselprov.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Sulawesi Selatan</a></li>
+                <li><a href="https://sultengprov.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Sulawesi Tengah</a></li>
+                <li><a href="https://sulutprov.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Sulawesi Utara</a></li>
+                <li><a href="https://sulbarprov.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Sulawesi Barat</a></li>
+                <li><a href="https://sultraprov.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Sulawesi Tenggara</a></li>
+
+                <li><a href="https://gorontaloprov.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Gorontalo</a></li>
+
+                <li><a href="https://malukuprov.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Maluku</a></li>
+                <li><a href="https://malutprov.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Maluku Utara</a></li>
+
+                <li><a href="https://www.papua.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Papua</a></li>
+                <li><a href="https://papuabaratprov.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Papua Barat</a></li>
+                <li><a href="https://papuatengahprov.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Papua Tengah</a></li>
+                <li><a href="https://papuaselatan.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Papua Selatan</a></li>
+                <li><a href="https://papuabaratdayaprov.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Papua Barat Daya</a></li>
+                <li><a href="https://papuapegunungan.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Papua Pegunungan</a></li>
               </ul>
             </div>
             
-            <div className="mt-0">
-              <h3 className="font-bold text-sm md:text-base mb-2 text-center sm:text-left">Wilayah</h3>
-              <ul className="space-y-0.5 md:space-y-1 text-center sm:text-left">
-                <li><a href="#" className="text-snowymint-100 hover:text-white text-xs md:text-sm">Kalimantan</a></li>
-                <li><a href="#" className="text-snowymint-100 hover:text-white text-xs md:text-sm">Sulawesi</a></li>
-                <li><a href="#" className="text-snowymint-100 hover:text-white text-xs md:text-sm">Maluku</a></li>
-                <li><a href="#" className="text-snowymint-100 hover:text-white text-xs md:text-sm">Papua</a></li>
+            {/* BPS */}
+            <div className="text-left">
+              <h3 className="font-bold text-sm md:text-base mb-3">Badan Pusat Statistik</h3>
+              <ul className="space-y-2 text-xs md:text-sm">
+                <li><a href="https://kalsel.bps.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">BPS Provinsi Kalimantan Selatan</a></li>
+                <li><a href="https://kalteng.bps.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">BPS Provinsi Kalimantan Tengah</a></li>
+                <li><a href="https://kaltim.bps.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">BPS Provinsi Kalimantan Timur</a></li>
+                <li><a href="https://kalbar.bps.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">BPS Provinsi Kalimantan Barat</a></li>
+                <li><a href="https://kaltara.bps.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">BPS Provinsi Kalimantan Utara</a></li>
+
+                <li><a href="https://sulsel.bps.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">BPS Provinsi Sulawesi Selatan</a></li>
+                <li><a href="https://sulteng.bps.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">BPS Provinsi Sulawesi Tengah</a></li>
+                <li><a href="https://sulut.bps.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">BPS Provinsi Sulawesi Utara</a></li>
+                <li><a href="https://sulbar.bps.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">BPS Provinsi Sulawesi Barat</a></li>
+                <li><a href="https://gorontalo.bps.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">BPS Provinsi Gorontalo</a></li>
+
+                <li><a href="https://maluku.bps.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">BPS Provinsi Maluku</a></li>
+                <li><a href="https://malut.bps.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">BPS Provinsi Maluku Utara</a></li>
+
+                <li><a href="https://papua.bps.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">BPS Provinsi Papua</a></li>
+                <li><a href="https://papuabarat.bps.go.id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">BPS Provinsi Papua Barat</a></li>
               </ul>
             </div>
-            
-            <div className="mt-0">
-              <h3 className="font-bold text-sm md:text-base mb-2 text-center sm:text-left">Kontak</h3>
-              <ul className="space-y-1 text-xs md:text-sm">
-                <li className="flex items-start justify-center sm:justify-start">
-                  <MapPinIcon className="mr-1 mt-0.5 flex-shrink-0 w-3 h-3 md:w-4 md:h-4" />
-                  <span className="text-snowymint-100">Jl. Soekarno Hatta/Trikora No 7 Banjarbaru</span>
-                </li>
-                <li className="flex items-center justify-center sm:justify-start">
-                  <PhoneIcon className="mr-1 flex-shrink-0 w-3 h-3 md:w-4 md:h-4" />
-                  <span className="text-snowymint-100">0511 6749001</span>
-                </li>
-                <li className="flex items-center justify-center sm:justify-start">
-                  <MailIcon className="mr-1 flex-shrink-0 w-3 h-3 md:w-4 md:h-4" />
-                  <span className="text-snowymint-100 text-xs">bps6300@bps.go.id</span>
-                </li>
+
+            {/* Bank Indonesia */}
+            <div className="text-left">
+              <h3 className="font-bold text-sm md:text-base mb-3">Bank Indonesia</h3>
+              <ul className="space-y-2 text-xs md:text-sm">
+                <li><a href="https://www.bi.go.id/id/tentang-bi/profil/organisasi/Pages/Kantor-Perwakilan-Provinsi-Kalimantan-Selatan.aspx" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">BI KP Kalimantan Selatan</a></li>
+                <li><a href="https://www.bi.go.id/id/tentang-bi/profil/organisasi/Pages/Kantor-Perwakilan-Kalimantan-Tengah.aspx" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">BI KP Kalimantan Tengah</a></li>
+                <li><a href="https://www.bi.go.id/id/tentang-bi/profil/organisasi/Pages/Kantor-Perwakilan-Provinsi-Kalimantan-Timur.aspx" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">BI KP Kalimantan Timur</a></li>
+                <li><a href="https://www.bi.go.id/id/tentang-bi/profil/organisasi/Pages/Kantor-Perwakilan-Kalimantan-Barat.aspx" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">BI KP Kalimantan Barat</a></li>
+                <li><a href="https://www.bi.go.id/id/tentang-bi/profil/organisasi/Pages/Kantor-Perwakilan-Kalimantan-Utara.aspx" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">BI KP Kalimantan Utara</a></li>
+
+                <li><a href="https://www.bi.go.id/id/tentang-bi/profil/organisasi/Pages/Kantor-Perwakilan-Sulawesi-Selatan.aspx" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">BI KP Sulawesi Selatan</a></li>
+                <li><a href="https://www.bi.go.id/id/tentang-bi/profil/organisasi/Pages/Kantor-Perwakilan-Sulawesi-Tengah.aspx" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">BI KP Sulawesi Tengah</a></li>
+                <li><a href="https://www.bi.go.id/id/tentang-bi/profil/organisasi/Pages/Kantor-Perwakilan-Sulawesi-Utara.aspx" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">BI KP Sulawesi Utara</a></li>
+                <li><a href="https://www.bi.go.id/id/tentang-bi/profil/organisasi/Pages/Kantor-Perwakilan-Sulawesi-Barat.aspx" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">BI KP Sulawesi Barat</a></li>
+                <li><a href="https://www.bi.go.id/id/tentang-bi/profil/organisasi/Pages/Kantor-Perwakilan-Gorontalo.aspx" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">BI KP Gorontalo</a></li>
+
+                <li><a href="https://www.bi.go.id/id/tentang-bi/profil/organisasi/Pages/Kantor-Perwakilan-Provinsi-Maluku.aspx" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">BI KP Maluku</a></li>
+                <li><a href="https://www.bi.go.id/id/tentang-bi/profil/organisasi/Pages/Kantor-Perwakilan-Maluku-Utara.aspx" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">BI KP Maluku Utara</a></li>
+
+                <li><a href="https://www.bi.go.id/id/tentang-bi/profil/organisasi/Pages/Kantor-Perwakilan-Papua.aspx" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">BI KP Papua</a></li>
+                <li><a href="https://www.bi.go.id/id/tentang-bi/profil/organisasi/Pages/Kantor-Perwakilan-Papua-Barat.aspx" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">BI KP Papua Barat</a></li>
+              </ul>
+            </div>
+
+            {/* DJPB */}
+            <div className="text-left">
+              <h3 className="font-bold text-sm md:text-base mb-3">DJPB</h3>
+              <ul className="space-y-2 text-xs md:text-sm">
+                <li><a href="https://djpb.kemenkeu.go.id/kanwil/kalsel/id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">DJPb Kalimantan Selatan</a></li>
+                <li><a href="https://djpb.kemenkeu.go.id/kanwil/kalteng/id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">DJPb Kalimantan Tengah</a></li>
+                <li><a href="https://djpb.kemenkeu.go.id/kanwil/kaltim/id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">DJPb Kalimantan Timur</a></li>
+                <li><a href="https://djpb.kemenkeu.go.id/kanwil/kalbar/id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">DJPb Kalimantan Barat</a></li>
+                <li><a href="https://djpb.kemenkeu.go.id/kanwil/kaltara/id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">DJPb Kalimantan Utara</a></li>
+
+                <li><a href="https://djpb.kemenkeu.go.id/kanwil/sulsel/id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">DJPb Sulawesi Selatan</a></li>
+                <li><a href="https://djpb.kemenkeu.go.id/kanwil/sulteng/id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">DJPb Sulawesi Tengah</a></li>
+                <li><a href="https://djpb.kemenkeu.go.id/kanwil/sulut/id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">DJPb Sulawesi Utara</a></li>
+                <li><a href="https://djpb.kemenkeu.go.id/kanwil/sulbar/id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">DJPb Sulawesi Barat</a></li>
+                <li><a href="https://djpb.kemenkeu.go.id/kanwil/gorontalo/id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">DJPb Gorontalo</a></li>
+
+                <li><a href="https://djpb.kemenkeu.go.id/kanwil/maluku/id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">DJPb Maluku</a></li>
+                <li><a href="https://djpb.kemenkeu.go.id/kanwil/malut/id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">DJPb Maluku Utara</a></li>
+
+                <li><a href="https://djpb.kemenkeu.go.id/kanwil/papua/id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">DJPb Papua</a></li>
+                <li><a href="https://djpb.kemenkeu.go.id/kanwil/papua-barat/id/" className="text-snowymint-100 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">DJPb Papua Barat</a></li>
               </ul>
             </div>
           </div>
-          
-          <div className="border-t border-snowymint-900 mt-4 md:mt-6 pt-3 md:pt-4 text-center">
+
+          {/* Copyright */}
+          <div className="border-t border-snowymint-900 mt-6 md:mt-8 pt-4 md:pt-6 text-center">
             <p className="text-xs text-snowymint-200">© 2025 Pusat Informasi Konreg PDRB Kasulampua. Hak Cipta Dilindungi.</p>
           </div>
         </div>
