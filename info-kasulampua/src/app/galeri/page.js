@@ -371,6 +371,9 @@ export default function GaleriPage() {
               <Link href="/galeri" className="font-medium text-gray-800 hover:text-snowymint-900 transition-colors border-b-2 border-snowymint-900">
                 Galeri
               </Link>
+              <Link href="/kontak" className="font-medium text-gray-800 hover:text-snowymint-900 transition-colors">
+                Kontak
+              </Link>
               <Link href="/tentang" className="font-medium text-gray-800 hover:text-snowymint-900 transition-colors">
                 Tentang
               </Link>
@@ -403,6 +406,7 @@ export default function GaleriPage() {
               <a href="/akomodasi" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">Akomodasi</a>
               <a href="/wisata" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">Wisata</a>
               <a href="/galeri" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm bg-snowymint-300">Galeri</a>
+              <a href="/kontak" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">Kontak</a>
               <a href="/tentang" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">Tentang</a>
               
               {/* Admin menu items for mobile */}

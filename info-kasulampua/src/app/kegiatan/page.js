@@ -716,6 +716,9 @@ export default function InformasiPage() {
               <Link href="/galeri" className="font-medium text-gray-800 hover:text-snowymint-900 transition-colors">
                 Galeri
               </Link>
+              <Link href="/kontak" className="font-medium text-gray-800 hover:text-snowymint-900 transition-colors">
+                Kontak
+              </Link>
               <Link href="/tentang" className="font-medium text-gray-800 hover:text-snowymint-900 transition-colors">
                 Tentang
               </Link>
@@ -746,6 +749,9 @@ export default function InformasiPage() {
               </Link>
               <Link href="/galeri" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">
                 Galeri
+              </Link>
+              <Link href="/kontak" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">
+                Kontak
               </Link>
               <Link href="/tentang" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">
                 Tentang

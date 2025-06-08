@@ -10,6 +10,7 @@ const MapPinIcon = () => (
     <circle cx="12" cy="10" r="3"></circle>
   </svg>
 );
+
 const MenuIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -38,7 +39,23 @@ const XIcon = () => (
   </svg>
 );
 
-export default function Tentang() {
+const UserIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+    <circle cx="12" cy="7" r="4"></circle>
+  </svg>
+);
+
+const BuildingIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+    <path d="M6 12H4a2 2 0 0 0-2 2v8h20v-8a2 2 0 0 0-2-2h-2"></path>
+    <rect width="4" height="4" x="10" y="4"></rect>
+    <rect width="4" height="4" x="10" y="10"></rect>
+  </svg>
+);
+
+export default function Kontak() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleNavItemClick = () => {
@@ -80,10 +97,10 @@ export default function Tentang() {
               <Link href="/galeri" className="font-medium text-gray-800 hover:text-snowymint-900 transition-colors">
                 Galeri
               </Link>
-              <Link href="/kontak" className="font-medium text-gray-800 hover:text-snowymint-900 transition-colors">
+              <Link href="/kontak" className="font-medium text-snowymint-900 border-b-2 border-snowymint-900 transition-colors">
                 Kontak
               </Link>
-              <Link href="/tentang" className="font-medium text-snowymint-900 border-b-2 border-snowymint-900 transition-colors">
+              <Link href="/tentang" className="font-medium text-gray-800 hover:text-snowymint-900 transition-colors">
                 Tentang
               </Link>
             </nav>
@@ -114,10 +131,10 @@ export default function Tentang() {
               <Link href="/galeri" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">
                 Galeri
               </Link>
-              <Link href="/kontak" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">
+              <Link href="/kontak" onClick={handleNavItemClick} className="block py-2 bg-snowymint-300 px-3 rounded text-sm font-medium">
                 Kontak
               </Link>
-              <Link href="/tentang" onClick={handleNavItemClick} className="block py-2 bg-snowymint-300 px-3 rounded text-sm font-medium">
+              <Link href="/tentang" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">
                 Tentang
               </Link>
             </nav>
@@ -127,46 +144,160 @@ export default function Tentang() {
 
       {/* Main Content */}
       <main className="pt-16 md:pt-20">
-        {/* Logo Section */}
-        <section className="py-12 md:py-20 bg-gradient-to-br from-snowymint-50 to-white">
-          <div className="container mx-auto px-4 text-center">
-            <div className="max-w-4xl mx-auto">
-              {/* Logo Besar */}
-              <div className="mb-8 md:mb-12">
-                <img 
-                  src="/logo/logo-kasulampua-warna.svg" 
-                  alt="KONREG PDRB KASULAMPUA Logo" 
-                  className="h-32 md:h-48 lg:h-64 mx-auto"
-                />
-              </div>
-              
-              {/* Judul */}
-              <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-snowymint-900 mb-4 md:mb-6">
-                Konsultasi Regional PDRB
-              </h1>
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-pattensblue-900 mb-8 md:mb-12">
-                Kalimantan, Sulawesi, Maluku, dan Papua
-              </h2>
-            </div>
-          </div>
-        </section>
-
-        {/* Deskripsi Section */}
-        <section className="py-12 md:py-16">
+        {/* Kontak Institusi Section */}
+        <section className="py-12 md:py-16 bg-gray-50">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              
-              {/* Deskripsi Utama */}
-              <div className="prose prose-lg md:prose-xl max-w-none text-center mb-12 md:mb-16">
-                <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
-                Konsultasi Regional Kalimantan, Sulawesi, Maluku, dan Papua (Kasulampua) merupakan forum bertukar pengetahuan tentang permasalahan dan pembangunan ekonomi di wilayah Kasulampua yang diinisiasi oleh Badan Pusat Statistik, Bappeda, dan Bank Indonesia. 
-                </p>
-                <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-                Konreg ini menitikberatkan pada pencapaian keselarasan, keserasian dan keterpaduan perencanaan pembangunan antar wilayah, antara pusat dan daerah serta antar sektor khususnya di wilayah Kasulampua. Konreg ini akan menjadi landasan dalam penyusunan kesepahaman/kesepakatan dan rencana tindak lanjut sekaligus menggerakkan perekonomian daerah sebagai upaya pencapaian pembangunan regional maupun nasional.
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-2xl md:text-3xl font-bold text-snowymint-900 mb-4">
+                  Kontak PIC Konreg Kasulampua 2025
+                </h2>
+                <p className="text-gray-600 text-lg">
+                  Perwakilan dari BPS, Bappeda, Bank Indonesia, dan DJPB
                 </p>
               </div>
 
-              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {/* BPS */}
+                <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+                  <div className="text-center mb-4">
+                    <div className="w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center mx-auto mb-3">
+                      <UserIcon className="w-8 h-8" />
+                    </div>
+                    <div className="bg-blue-50 text-blue-700 text-xs font-semibold py-1 px-3 rounded-full inline-block">
+                      BPS
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">
+                      Abdurrahman, SST., M.Si.
+                    </h3>
+                    <p className="text-blue-600 font-medium text-sm mb-3">
+                      Statistisi Madya BPS Provinsi Kalimantan Selatan
+                    </p>
+                    
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-center">
+                        <PhoneIcon className="w-4 h-4 text-gray-500 mr-2 flex-shrink-0" />
+                        <a href="https://wa.me/6281348433699" target="_blank" className="text-gray-700 hover:text-blue-600 transition-colors text-sm">
+                          081348433699
+                        </a>
+                      </div>
+                      <div className="flex items-center justify-center">
+                        <MailIcon className="w-4 h-4 text-gray-500 mr-2 flex-shrink-0" />
+                        <a href="mailto:abdurrahman@bps.go.id" className="text-gray-700 hover:text-blue-600 transition-colors text-sm">
+                          abdurrahman@bps.go.id
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bappeda 
+                <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+                  <div className="text-center mb-4">
+                    <div className="w-16 h-16 rounded-full bg-green-600 text-white flex items-center justify-center mx-auto mb-3">
+                      <UserIcon className="w-8 h-8" />
+                    </div>
+                    <div className="bg-green-50 text-green-700 text-xs font-semibold py-1 px-3 rounded-full inline-block">
+                      BAPPEDA
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">
+                      Ir. H. Muhammad Rizki, M.T.
+                    </h3>
+                    <p className="text-green-600 font-medium text-sm mb-3">
+                      Kepala Bappeda Provinsi Kalimantan Selatan
+                    </p>
+                    
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-center">
+                        <PhoneIcon className="w-4 h-4 text-gray-500 mr-2 flex-shrink-0" />
+                        <a href="tel:05113304200" className="text-gray-700 hover:text-green-600 transition-colors text-sm">
+                          0511 3304200
+                        </a>
+                      </div>
+                      <div className="flex items-center justify-center">
+                        <MailIcon className="w-4 h-4 text-gray-500 mr-2 flex-shrink-0" />
+                        <a href="mailto:bappeda@kalselprov.go.id" className="text-gray-700 hover:text-green-600 transition-colors text-sm">
+                          bappeda@kalselprov.go.id
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div> */}
+
+                {/* Bank Indonesia 
+                <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+                  <div className="text-center mb-4">
+                    <div className="w-16 h-16 rounded-full bg-red-600 text-white flex items-center justify-center mx-auto mb-3">
+                      <UserIcon className="w-8 h-8" />
+                    </div>
+                    <div className="bg-red-50 text-red-700 text-xs font-semibold py-1 px-3 rounded-full inline-block">
+                      BANK INDONESIA
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">
+                      Drs. Haryono Kurniawan, M.Si.
+                    </h3>
+                    <p className="text-red-600 font-medium text-sm mb-3">
+                      Kepala KP BI Kalimantan Selatan
+                    </p>
+                    
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-center">
+                        <PhoneIcon className="w-4 h-4 text-gray-500 mr-2 flex-shrink-0" />
+                        <a href="tel:05113266500" className="text-gray-700 hover:text-red-600 transition-colors text-sm">
+                          0511 3266500
+                        </a>
+                      </div>
+                      <div className="flex items-center justify-center">
+                        <MailIcon className="w-4 h-4 text-gray-500 mr-2 flex-shrink-0" />
+                        <a href="mailto:kpwkalsel@bi.go.id" className="text-gray-700 hover:text-red-600 transition-colors text-sm">
+                          kpwkalsel@bi.go.id
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div> */}
+
+                {/* DJPB 
+                <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+                  <div className="text-center mb-4">
+                    <div className="w-16 h-16 rounded-full bg-purple-600 text-white flex items-center justify-center mx-auto mb-3">
+                      <UserIcon className="w-8 h-8" />
+                    </div>
+                    <div className="bg-purple-50 text-purple-700 text-xs font-semibold py-1 px-3 rounded-full inline-block">
+                      DJPB
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">
+                      Drs. H. Supriadi, M.M.
+                    </h3>
+                    <p className="text-purple-600 font-medium text-sm mb-3">
+                      Kepala KPPN Banjarmasin
+                    </p>
+                    
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-center">
+                        <PhoneIcon className="w-4 h-4 text-gray-500 mr-2 flex-shrink-0" />
+                        <a href="tel:05113305200" className="text-gray-700 hover:text-purple-600 transition-colors text-sm">
+                          0511 3305200
+                        </a>
+                      </div>
+                      <div className="flex items-center justify-center">
+                        <MailIcon className="w-4 h-4 text-gray-500 mr-2 flex-shrink-0" />
+                        <a href="mailto:kppn.banjarmasin@kemenkeu.go.id" className="text-gray-700 hover:text-purple-600 transition-colors text-sm">
+                          kppn.banjarmasin@kemenkeu.go.id
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>*/}
+              </div>
             </div>
           </div>
         </section>

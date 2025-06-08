@@ -88,7 +88,7 @@ const initialData = {
     "rating": 4.4,
     "distance": 2.9,
     "time": 10,
-    "description": "Menara Pandang Banjarmasin adalah ikon wisata kota yang terletak di tepi Sungai Martapura. Dengan ketinggian sekitar 21 meter dan empat lantai, menara ini menawarkan pemandangan panorama kota, termasuk Masjid Raya Sabilal Muhtadin dan aktivitas sungai seperti pasar terapung. Lantai atas merupakan area terbuka yang aman untuk pengunjung dari segala usia. Fasilitas di sekitar menara mencakup taman, area kuliner, dan dermaga untuk wisata susur sungai.",
+    "description": "Bisa dicapai dalam 10 menit dari pusat kota via Jl. Sudirman. Disarankan menggunakan ojek online, tersedia area parkir dekat dermaga Siring.",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Menara+Pandang+Banjarmasin",
     "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhNBdEQclaDpdc14GSFbviCnwIFwGODtRrOzlJgqJ-B8gS5QSaNvklHQzdGDdNzfRvt1zQ7DzhBWWIM3Q7NFdR3mp8b8La2k6GzogKU8mS7CUo0jV8Spzvmt_w8kHstTUOfu2x6xWC5JQgk/s1600/Slider-2-Menara_Pandang-BanjarmasinTourism.jpg",
     "source": "https://disbudporapar.banjarmasinkota.go.id/2018/10/menara-pandang-banjarmasin.html",
@@ -102,7 +102,7 @@ const initialData = {
     "rating": 4.4,
     "distance": 3,
     "time": 10,
-    "description": "Pasar tradisional di atas sungai dengan perahu-perahu pedagang yang menjual berbagai hasil bumi dan kuliner lokal, ikon wisata Banjarmasin.",
+    "description": "Terletak di Siring, mudah dijangkau dengan berjalan kaki dari pusat kota atau naik ojek online. Akses terbaik pagi hari.",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Pasar%20Terapung%20Siring%20Banjarmasin",
     "id": "destinasi_1746760000007",
     "image": "https://asset.kompas.com/crops/4tUHnFkPBJO4wCf4BFXuhEtQZMk=/0x0:3000x2000/750x500/data/photo/2023/01/14/63c1faaa86ccc.jpg",
@@ -117,7 +117,7 @@ const initialData = {
     "rating": 4.6,
     "distance": 6.4,
     "time": 18,
-    "description": "Kampung Sasirangan Sungai Jingah merupakan sentra kerajinan kain sasirangan khas Kalimantan Selatan. Di sini, pengunjung dapat menyaksikan langsung proses pembuatan kain sasirangan, mulai dari menggambar pola hingga pewarnaan. Kawasan ini juga menawarkan pengalaman budaya Banjar yang kental dengan arsitektur rumah tradisional dan kehidupan masyarakat yang ramah.",
+    "description": "Naik kendaraan pribadi atau ojek online sekitar 15 sampai 20 menit dari kota. Akses jalan kecil, cocok untuk motor dan mobil kecil.",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Kampung+Sasirangan+Sungai+Jingah+Banjarmasin",
     "image": "https://jadesta.com/imgpost/57047.jpg",
     "source": "https://jadesta.kemenparekraf.go.id/desa/kampung_sasirangan_sungai_jingah",
@@ -131,7 +131,7 @@ const initialData = {
     "rating": 4.1,
     "distance": 39.4,
     "time": 84,
-    "description": "Pulau di tengah Sungai Barito yang menjadi habitat kera ekor panjang dan berbagai jenis burung, cocok untuk wisata alam dan edukasi.",
+    "description": "Naik perahu dari dermaga Siring ke Pulau Kembang, perjalanan sungai sekitar 30 menit. Sewa perahu bisa rombongan.",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Pulau%20Kembang%20Barito%20Kuala",
     "id": "destinasi_1746760000008",
     "image": "https://indonesiakaya.com/wp-content/uploads/2020/10/Biaya_memasuki_Pulau_Kembang_dikenakan_tarif_sebesar_5_000_rupiah_orangnya-1.jpg",
@@ -145,7 +145,7 @@ const initialData = {
     "rating": 3.9,
     "distance": 36,
     "time": 58,
-    "description": "Taman hiburan keluarga terbesar di Kalimantan dengan berbagai wahana edukatif dan rekreatif, termasuk festival balon udara tahunan.",
+    "description": "Dari Banjarmasin ke Banjarbaru sekitar 1 jam via Jl. A. Yani, lalu ke Jl. Taruna Bhakti. Ideal pakai mobil pribadi atau sewa.",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Amanah%20Borneo%20Park",
     "id": "destinasi_1746760000004",
     "image": "https://kec-cempaka.banjarbarukota.go.id/wp-content/uploads/2019/10/WhatsApp-Image-2019-10-08-at-14.44.24-1024x768.jpeg",
@@ -160,7 +160,7 @@ const initialData = {
     "rating": 4.8,
     "distance": 38.9,
     "time": 71,
-    "description": "Masjid Agung Al-Karomah adalah masjid terbesar di Kalimantan Selatan, terletak di pusat Kota Martapura. Didirikan pada 5 Desember 1897, masjid ini awalnya dikenal sebagai Masjid Jami’ Martapura. Arsitekturnya menggabungkan gaya tradisional Banjar, Jawa, Eropa, dan Timur Tengah. Empat tiang ulin (saka guru) dari bangunan asli masih dipertahankan, menjadi simbol sejarah dan spiritualitas. Masjid ini juga berfungsi sebagai pusat kegiatan keagamaan dan sosial masyarakat setempat.",
+    "description": "Bisa dicapai dalam 1 jam dari Banjarmasin via Jl. A. Yani. Masjid berada di pinggir jalan utama, mudah dikenali",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Masjid+Agung+Al-Karomah+Martapura",
     "image": "https://smart.kalselprov.go.id/uploads/foto/al_karomah_mtp1.png",
     "source": "https://id.wikipedia.org/wiki/Masjid_Agung_Al-Karomah",
@@ -174,7 +174,7 @@ const initialData = {
     "rating": 4.7,
     "distance": 50.3,
     "time": 85,
-    "description": "Tahura Sultan Adam adalah kawasan konservasi dan ekowisata seluas sekitar 112.000 hektar yang terletak di Kalimantan Selatan. Kawasan ini menawarkan berbagai atraksi alam seperti air terjun, camping ground, agrowisata, paralayang, serta situs bersejarah peninggalan Belanda. Terletak di perbukitan dengan udara sejuk, Tahura Sultan Adam menjadi destinasi favorit untuk rekreasi keluarga, edukasi lingkungan, dan petualangan alam.",
+    "description": "Sekitar 1,5 jam dari Banjarmasin ke Mandiangin via Karang Intan. Akses jalan bagus, tapi tidak ada angkutan umum langsung.",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Tahura+Sultan+Adam+Mandiangin",
     "image": "https://dispar.kalselprov.go.id/wp-content/uploads/2025/03/Gapura_Tahura_Sultan_Adam-2048x893.jpg",
     "source": "https://regional.kompas.com/read/2022/11/16/232829878/tahura-sultan-adam-di-kalimantan-selatan-daya-tarik-harga-tiket-dan-rute",
@@ -187,7 +187,7 @@ const initialData = {
         "rating": 4.3,
         "distance": 56.6,
         "time": 76,
-        "description": "Bukit dengan panorama alam yang memukau, menawarkan pemandangan hijau dan gugusan pulau kecil, cocok untuk pendaki pemula dan pecinta alam.",
+        "description": "Akses via Bendungan Riam Kanan, lalu trekking 15 sampai 30 menit. Disarankan pakai kendaraan pribadi dan sepatu outdoor.",
         "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Bukit%20Matang%20Kaladan",
         "id": "destinasi_1746760000006",
         "image": "https://meratusgeopark.org/wp-content/uploads/2023/10/DJI_0034-scaled.jpg",
@@ -660,6 +660,9 @@ const getNextSectionName = () => {
               <Link href="/galeri" className="font-medium text-gray-800 hover:text-snowymint-900 transition-colors">
                 Galeri
               </Link>
+              <Link href="/kontak" className="font-medium text-gray-800 hover:text-snowymint-900 transition-colors">
+                Kontak
+              </Link>
               <Link href="/tentang" className="font-medium text-gray-800 hover:text-snowymint-900 transition-colors">
                 Tentang
               </Link>
@@ -692,6 +695,7 @@ const getNextSectionName = () => {
               <a href="/akomodasi" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">Akomodasi</a>
               <a href="/wisata" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm bg-snowymint-300">Wisata</a>
               <a href="/galeri" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">Galeri</a>
+              <a href="/kontak" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">Kontak</a>
               <a href="/tentang" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">Tentang</a>
               
               {/* Mobile Category Selection */}
