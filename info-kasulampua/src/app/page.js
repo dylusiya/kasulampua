@@ -1,4 +1,6 @@
+
 'use client';
+import Image from 'next/image';
 
 import { useState, useRef } from 'react';
 import Link from 'next/link';
@@ -107,7 +109,7 @@ const timelineData = [
     events: [
       {
         title: "Registrasi Peserta",
-        time: "(08.30-09.00)",
+        time: "(08.00-09.00)",
         icon: UserGroupIcon,
         details: []
       },
@@ -129,7 +131,7 @@ const timelineData = [
       },
       {
         title: "Pemaparan Hasil Perumusan Kesepakatan",
-        time: "(13.30-14.30)",
+        time: "(13.30-15.30)",
         icon: MessageCircleIcon,
         details: []
       },
@@ -420,7 +422,7 @@ const ProvinceLogoCarousel = () => {
   };
 
   return (
-    <section className="py-8 md:py-12 bg-gray-50">
+    <section className="py-8 md:py-12 bg-green-50">
       <div className="container mx-auto px-3 md:px-4">
         <h2 className="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-snowymint-900 text-center">
           Didukung oleh
@@ -623,13 +625,24 @@ export default function Home() {
             <h1 className="text-pattensblue-900 text-4xl md:text-7xl font-bold mb-1 md:mb-2 whitespace-nowrap">PUSAT INFORMASI</h1>
             <p className="text-pattensblue-900 mb-3 md:mb-4 font-normal text-xs md:text-sm max-w-xs mx-auto md:max-w-none">Selamat datang di Pusat Informasi Peserta Konsultasi Regional PDRB Kalimantan, Sulawesi, Maluku, dan Papua (Kasulampua).</p>
             <div className="flex justify-center">
-              {/* UPDATED: Increased button size for better visibility and touch targets */}
-              <a href="https://chat.whatsapp.com/HRd2IOdmqDBKwCZlysHWK4" className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-medium transition-colors text-center flex items-center justify-center text-sm md:text-base">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 mr-2 md:mr-3" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                </svg>
-                Bergabung ke WA Grup
-              </a>
+              <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+                {/* Tombol WhatsApp */}
+                <a href="https://chat.whatsapp.com/HRd2IOdmqDBKwCZlysHWK4" className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-medium transition-colors text-center flex items-center justify-center text-sm md:text-base">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 mr-2 md:mr-3" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  </svg>
+                  Bergabung ke WA Grup
+                </a>
+                
+                {/* Tombol Zoom */}
+                <a href="https://linktr.ee/Konreg_PDRB_KASULAMPUA" target="_blank" rel="noopener noreferrer"className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-medium transition-colors text-center flex items-center justify-center text-sm md:text-base">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 mr-2 md:mr-3" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8.5 12a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zm0-5.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM15.5 12a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zm0-5.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/>
+                    <path d="M4 18.5v-2a3 3 0 0 1 3-3h3a3 3 0 0 1 3 3v2a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5zm1-2a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v1.5h-7V16.5zm10 2v-2a3 3 0 0 1 3-3h3a3 3 0 0 1 3 3v2a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5zm1-2a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v1.5h-7V16.5z"/>
+                  </svg>
+                  Zoom Meeting & Live
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -690,6 +703,102 @@ export default function Home() {
             <Link href="/kegiatan" className="bg-snowymint-900 hover:bg-snowymint-950 text-white px-6 py-3 md:px-8 md:py-3 rounded-lg font-medium transition-colors inline-block text-sm md:text-base">
               Lihat Jadwal Lengkap
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Section Peserta Online*/}
+      <section className="py-8 md:py-12 bg-white">
+        <div className="container mx-auto px-3 md:px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-xl md:text-3xl font-bold mb-4 md:mb-6 text-snowymint-900">
+              Untuk Peserta Online
+            </h2>
+            <p className="text-gray-700 mb-6 md:mb-8 text-sm md:text-base">
+              Bagi peserta yang mengikuti kegiatan secara online, silakan bergabung melalui platform Zoom atau Youtube Live
+            </p>
+
+            {/* YouTube Live Embed */}
+            <div className="mb-6 md:mb-8">
+              <div className="bg-gray-900 rounded-lg overflow-hidden shadow-lg">
+                <div className="aspect-video">
+                  <iframe
+                    src="https://www.youtube.com/embed/lm-8VNYxC9A?si=zm7Ey_1w4wjLrpP_"
+                    title="Live Streaming Konreg PDRB Kasulampua"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="w-full h-full"
+                  ></iframe>
+                </div>
+                <div className="p-4 bg-gray-800 text-white">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+                      <span className="text-sm font-medium">LIVE</span>
+                    </div>
+                    <span className="text-sm text-gray-300">12 Juni 2025 • 09:00 WITA</span>
+                  </div>
+                  <h3 className="font-semibold mt-2">Live Streaming: Konsultasi Regional PDRB Kasulampua</h3>
+                </div>
+              </div>
+            </div>
+            
+            {/*
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8"> */}
+              {/* Info Meeting 
+              <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
+                <div className="flex items-center justify-center mb-3">
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8.5 12a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zm0-5.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM15.5 12a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zm0-5.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/>
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="font-semibold text-lg mb-2 text-snowymint-900">Meeting ID</h3>
+                <p className="text-2xl font-mono font-bold text-blue-600 mb-2">819 7377 1918</p>
+                <p className="text-sm text-gray-600">Password: KASULAMPUA</p>
+              </div> */}
+
+              {/* Jadwal 
+              <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
+                <div className="flex items-center justify-center mb-3">
+                  <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                    <ClockIcon className="h-6 w-6 text-orange-600" />
+                  </div>
+                </div>
+                <h3 className="font-semibold text-lg mb-2 text-snowymint-900">Jadwal Live</h3>
+                <div className="text-sm text-gray-700 space-y-1">
+                  <p>📅 12 Juni 2025</p>
+                  <p>🕘 09:00 - 15:30 WITA</p>
+                  <p>🔴 Streaming langsung acara utama</p>
+                </div>
+              </div>*/}
+              {/*
+            </div>*/}
+
+            {/* Tombol Join 
+            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+              <a 
+                href="https://linktr.ee/Konreg_PDRB_KASULAMPUA" 
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-medium transition-colors text-center flex items-center justify-center text-base"
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8.5 12a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zm0-5.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM15.5 12a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zm0-5.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/>
+                </svg>
+                Bergabung Zoom Meeting
+              </a>
+            </div> */}
+
+            {/* Informasi Tambahan 
+            <div className="mt-6 p-4 bg-blue-100 rounded-lg">
+              <p className="text-sm text-blue-800">
+                💡 <strong>Tips:</strong> Pastikan koneksi internet stabil dan test audio/video sebelum acara dimulai. 
+                Download aplikasi Zoom terlebih dahulu untuk pengalaman terbaik.
+              </p>
+            </div> */}
           </div>
         </div>
       </section>

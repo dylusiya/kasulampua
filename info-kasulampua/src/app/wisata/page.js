@@ -79,12 +79,12 @@ const SmartphoneIcon = () => (
 
 // Placeholder data
 const initialData = {
-  "destinasiWisata": [    
-    {
+  "destinasiWisata": [
+  {
     "id": "destinasi_menara_pandang_banjarmasin",
     "name": "Menara Pandang Banjarmasin",
     "address": "Jl. Kapten Pierre Tendean No.07, RT.16/RW.2, Gadang, Banjarmasin Tengah, Kalimantan Selatan 70123",
-    "category": "Landmark",
+    "category": "Lainnya",
     "rating": 4.4,
     "distance": 2.9,
     "time": 10,
@@ -92,13 +92,14 @@ const initialData = {
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Menara+Pandang+Banjarmasin",
     "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhNBdEQclaDpdc14GSFbviCnwIFwGODtRrOzlJgqJ-B8gS5QSaNvklHQzdGDdNzfRvt1zQ7DzhBWWIM3Q7NFdR3mp8b8La2k6GzogKU8mS7CUo0jV8Spzvmt_w8kHstTUOfu2x6xWC5JQgk/s1600/Slider-2-Menara_Pandang-BanjarmasinTourism.jpg",
     "source": "https://disbudporapar.banjarmasinkota.go.id/2018/10/menara-pandang-banjarmasin.html",
-    "selected": true
-    },
-
+    "selected": true,
+    "openDays": "Setiap Hari",
+    "openHours": "10.00-21.00 WITA"
+  },
   {
     "name": "Pasar Terapung Siring",
     "address": "Jl. Jend. Sudirman, Banjarmasin Tengah, Kota Banjarmasin, Kalimantan Selatan",
-    "category": "Wisata Budaya",
+    "category": "Lainnya",
     "rating": 4.4,
     "distance": 3,
     "time": 10,
@@ -107,27 +108,94 @@ const initialData = {
     "id": "destinasi_1746760000007",
     "image": "https://asset.kompas.com/crops/4tUHnFkPBJO4wCf4BFXuhEtQZMk=/0x0:3000x2000/750x500/data/photo/2023/01/14/63c1faaa86ccc.jpg",
     "source": "https://www.google.com/maps/search/?api=1&query=Pasar%20Terapung%20Siring%20Banjarmasin",
-    "selected": true
+    "selected": true,
+    "openDays": "Sabtu-Minggu",
+    "openHours": "Sabtu: 15.00-24.00, Minggu: 06.00-12.00 WITA"
+  },
+  {
+  "id": "destinasi_museum_wasaka",
+  "name": "Museum Wasaka",
+  "address": "Banjarmasin, Kalimantan Selatan",
+  "category": "Geopark Meratus - Rute Barat",
+  "rating": 4.4,
+  "distance": 3,
+  "time": 10,
+  "description": "Museum Wasaka dapat dicapai sekitar 10 menit dari pusat kota Banjarmasin. Akses paling mudah melalui Jl. Hasan Basry atau menyusuri Sungai Martapura menggunakan perahu klotok untuk pengalaman wisata yang khas.",
+  "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=museum%20wasaka",
+  "image": "https://meratusgeopark.org/wp-content/uploads/2023/10/02-Museum-Wasaka-600x400.jpg",
+  "source": "https://meratusgeopark.org/situs-museum-wasaka/",
+  "selected": true,
+  "openDays": "Selasa–Minggu",
+  "openHours": "08.00–15.00"
   },
   {
     "id": "destinasi_kampung_sasirangan_sungai_jingah",
     "name": "Kampung Sasirangan Sungai Jingah",
     "address": "Jl. Sungai Jingah RT.17/RW.01, Kelurahan Sungai Jingah, Banjarmasin Utara, Kalimantan Selatan 70121",
-    "category": "Desa Wisata",
+    "category": "Geopark Meratus - Rute Barat",
     "rating": 4.6,
     "distance": 6.4,
     "time": 18,
     "description": "Naik kendaraan pribadi atau ojek online sekitar 15 sampai 20 menit dari kota. Akses jalan kecil, cocok untuk motor dan mobil kecil.",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Kampung+Sasirangan+Sungai+Jingah+Banjarmasin",
-    "image": "https://jadesta.com/imgpost/57047.jpg",
-    "source": "https://jadesta.kemenparekraf.go.id/desa/kampung_sasirangan_sungai_jingah",
-    "selected": true
- },
-
+    "image": "https://meratusgeopark.org/wp-content/uploads/2023/10/03-Kampung-Tradisional-Sasirangan-600x400.jpg",
+    "source": "https://meratusgeopark.org/situs-kampung-tradisional-sasirangan/",
+    "selected": true,
+    "openDays": "Setiap Hari",
+    "openHours": "08.00-17.00 WITA"
+  },
+  {
+    "id": "destinasi_pasar_terapung_lok_baintan",
+    "name": "Pasar Terapung Lok Baintan",
+    "address": "Lok Baintan, Sungai Tabuk, Banjar, Kalimantan Selatan",
+    "category": "Geopark Meratus - Rute Barat",
+    "rating": 4.4,
+    "distance": 12.5,
+    "time": 25,
+    "description": "Untuk menuju ke Pasar Terapung Lok Baintan, Anda bisa menyewa klotok (perahu motor) dari dermaga Siring Banjarmasin sekitar pukul 05.30 WITA. Perjalanan menyusuri Sungai Martapura memakan waktu sekitar 45 menit hingga tiba di lokasi pasar.",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Pasar%20Terapung%20Lok%20Baintan",
+    "image": "https://meratusgeopark.org/wp-content/uploads/2023/10/02-Pasar-Terapung-Lok-Baintan-scaled.jpg",
+    "source": "https://meratusgeopark.org/situs-pasar-terapung-lok-baintan/",
+    "selected": true,
+    "openDays": "Setiap Hari",
+    "openHours": "05.30–07.30 WITA"
+  },
+  {
+  "id": "destinasi_curiak",
+  "name": "Konservasi Bekantan Curiak",
+  "address": "Pulau Curiak, Desa Marabahan Baru, Kecamatan Anjir Muara, Kabupaten Barito Kuala, Kalimantan Selatan",
+  "category": "Geopark Meratus - Rute Barat",
+  "rating": 4.5,
+  "distance": 20,
+  "time": 45,
+  "description": "Stasiun riset dan kawasan konservasi Bekantan di Pulau Curiak. Dapat dicapai dengan perjalanan perahu mesin sekitar 30 menit dari dermaga di bawah Jembatan Barito, atau melanjutkan dari Pulau Sewangi lewat jalur sungai sejauh ±4 km.",
+  "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Konservasi%20Bekantan%20Curiak",
+  "image": "https://meratusgeopark.org/wp-content/uploads/2023/10/09-Konservasi-Bekantan-Curiak-600x400.jpg",
+  "source": "https://meratusgeopark.org/situs-konservasi-bekantan-curiak/",
+  "selected": true,
+  "openDays": "Setiap Hari",
+  "openHours": "09.00–16.00"
+  },
+  {
+  "id": "destinasi_bubungan_tinggi_gajah_baliku",
+  "name": "Rumah Adat Bubungan Tinggi & Gajah Baliku",
+  "address": "Desa Teluk Selong Ulu, Kecamatan Martapura Barat, Kabupaten Banjar, Kalimantan Selatan",
+  "category": "Geopark Meratus - Rute Utara",
+  "rating": 4.7,
+  "distance": 30,
+  "time": 40,
+  "description": "Dua rumah adat Banjar bersejarah—Bubungan Tinggi & Gajah Baliku—berdiri di tepi Sungai Martapura di Teluk Selong Ulu. Akses: sekitar 30 km dari Hotel Galaxy Banjarmasin lewat Jl. A. Yani → Martapura. Bisa dilanjutkan dengan perahu kecil klotok di sungai untuk mendekati lokasi.",
+  "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Rumah+Adat+Bubungan+Tinggi+Martapura",
+  "image": "https://meratusgeopark.org/wp-content/uploads/2023/10/41-Rumah-Adat-bubungan-Tinggi-Gajah-Baliku-600x338.jpg",
+  "source": "https://meratusgeopark.org/situs-rumah-adat-bubungan-tinggi-gajah-baliku/",
+  "selected": true,
+  "openDays": "Setiap Hari",
+  "openHours": "08.00–17.00"
+  },
   {
     "name": "Pulau Kembang",
     "address": "Sungai Barito, Barito Kuala, Kalimantan Selatan",
-    "category": "Wisata Alam",
+    "category": "Geopark Meratus - Rute Barat",
     "rating": 4.1,
     "distance": 39.4,
     "time": 84,
@@ -135,13 +203,15 @@ const initialData = {
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Pulau%20Kembang%20Barito%20Kuala",
     "id": "destinasi_1746760000008",
     "image": "https://indonesiakaya.com/wp-content/uploads/2020/10/Biaya_memasuki_Pulau_Kembang_dikenakan_tarif_sebesar_5_000_rupiah_orangnya-1.jpg",
-    "source": "https://www.google.com/maps/search/?api=1&query=Pulau%20Kembang%20Barito%20Kuala",
-    "selected": true
+    "source": "https://meratusgeopark.org/situs-pulau-kembang/",
+    "selected": true,
+    "openDays": "Setiap Hari",
+    "openHours": "07.00-17.00 WITA"
   },
   {
     "name": "Amanah Borneo Park",
     "address": "Jl. Taruna Bhakti, Palam, Kec. Cempaka, Kota Banjarbaru, Kalimantan Selatan",
-    "category": "Taman Hiburan Keluarga",
+    "category": "Lainnya",
     "rating": 3.9,
     "distance": 36,
     "time": 58,
@@ -150,13 +220,31 @@ const initialData = {
     "id": "destinasi_1746760000004",
     "image": "https://kec-cempaka.banjarbarukota.go.id/wp-content/uploads/2019/10/WhatsApp-Image-2019-10-08-at-14.44.24-1024x768.jpeg",
     "source": "https://amanahborneopark.co.id/",
-    "selected": true
+    "selected": true,
+    "openDays": "Setiap Hari",
+    "openHours": "09.00-17.00 WITA"
   },
+  {
+  "id": "destinasi_museum_lambung_mangkurat",
+  "name": "Museum Lambung Mangkurat",
+  "address": "Jalan Jenderal Ahmad Yani Km. 35,5, Banjarbaru Utara, Kota Banjarbaru, Kalimantan Selatan",
+  "category": "Geopark Meratus - Rute Selatan",
+  "rating": 4.5,
+  "distance": 35,
+  "time": 51,
+  "description": "Museum ini terletak di Jalan Ahmad Yani Km.35,5 Banjarbaru, mudah dijangkau dengan kendaraan pribadi atau umum dari Banjarmasin. Akses lancar melalui Jl. A. Yani langsung menuju Banjarbaru.",
+  "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Museum+Lambung+Mangkurat+Banjarbaru",
+  "image": "https://meratusgeopark.org/wp-content/uploads/2023/10/13-Museum-Lambung-Mangkurat-600x276.jpg",
+  "source": "https://meratusgeopark.org/situs-museum-lambung-mangkurat/",
+  "selected": true,
+  "openDays": "Senin-Jumat",
+  "openHours": "08.00–16.00"
+  }, 
   {
     "id": "destinasi_masjid_agung_al_karomah",
     "name": "Masjid Agung Al-Karomah Martapura",
     "address": "Jl. Ahmad Yani, Cindai Alus, Kec. Martapura, Kabupaten Banjar, Kalimantan Selatan 70611",
-    "category": "Tempat Ibadah",
+    "category": "Lainnya",
     "rating": 4.8,
     "distance": 38.9,
     "time": 71,
@@ -164,13 +252,47 @@ const initialData = {
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Masjid+Agung+Al-Karomah+Martapura",
     "image": "https://smart.kalselprov.go.id/uploads/foto/al_karomah_mtp1.png",
     "source": "https://id.wikipedia.org/wiki/Masjid_Agung_Al-Karomah",
-    "selected": true
-    },
-    {
+    "selected": true,
+    "openDays": "Setiap Hari",
+    "openHours": "24 Jam"
+  },
+  {
+  "id": "destinasi_hutan_hujan_tropika",
+  "name": "Taman Hutan Hujan Tropika",
+  "address": "Kelurahan Palam, Kecamatan Cempaka, Kota Banjarbaru, Kalimantan Selatan",
+  "category": "Geopark Meratus - Rute Selatan",
+  "rating": 4.6,
+  "distance": 40,
+  "time": 44,
+  "description": "Taman Hutan Hujan Tropika terletak sekitar 6 km selatan Banjarbaru, dalam kawasan perkantoran provinsi. Akses bisa dicapai via Jl. Dharma Praja menggunakan mobil/motor, atau bersama tour Geopark yang menyediakan shuttle dari pusat kota Banjarbaru.",
+  "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Taman+Hutan+Hujan+Tropika+Banjarbaru",
+  "image": "https://meratusgeopark.org/wp-content/uploads/2023/10/10-Taman-Hutan-Hujan-Tropika.jpg",
+  "source": "https://meratusgeopark.org/situs-taman-hutan-hujan-tropika/",
+  "selected": true,
+  "openDays": "Setiap Hari",
+  "openHours": "08.00–17.00"
+  },
+  {
+  "id": "destinasi_penambangan_intan_cempaka",
+  "name": "Penambangan Tradisional Intan Cempaka",
+  "address": "Kelurahan Bangkal, Kecamatan Cempaka, Kota Banjarbaru, Kalimantan Selatan",
+  "category": "Geopark Meratus - Rute Selatan",
+  "rating": 4.4,
+  "distance": 47,
+  "time": 60,
+  "description": "Situs penambangan intan tradisional di Kel. Bangkal, Cempaka—bagian dari endapan aluvial Sungai Martapura Purba. Dapat dijangkau kira‑kira 9 km selatan Kota Banjarbaru atau sekitar 47 km dari Hotel Galaxy Banjarmasin lewat Jl. A. Yani dan Banjarbaru. Aktifitas tradisional termasuk ritual kearifan lokal (pantangan menyebut “intan”, membawa sesajen) dan dulang intan menggunakan linggangan.",
+  "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Penambangan+Tradisional+Intan+Cempaka+Banjarbaru",
+  "image": "https://meratusgeopark.org/wp-content/uploads/2023/10/22-Penambangan-Tradisional-Intan-Cempaka-600x400.jpg",
+  "source": "https://meratusgeopark.org/situs-penambangan-tradisional-intan-cempaka/",
+  "selected": true,
+  "openDays": "Setiap Hari",
+  "openHours": "08.00–17.00"
+  },
+  {
     "id": "destinasi_tahura_sultan_adam",
     "name": "Tahura Sultan Adam Mandiangin",
     "address": "Desa Mandiangin Barat, Kecamatan Karang Intan, Kabupaten Banjar, Kalimantan Selatan 70661",
-    "category": "Wisata Alam",
+    "category": "Geopark Meratus - Rute Selatan",
     "rating": 4.7,
     "distance": 50.3,
     "time": 85,
@@ -178,23 +300,77 @@ const initialData = {
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Tahura+Sultan+Adam+Mandiangin",
     "image": "https://dispar.kalselprov.go.id/wp-content/uploads/2025/03/Gapura_Tahura_Sultan_Adam-2048x893.jpg",
     "source": "https://regional.kompas.com/read/2022/11/16/232829878/tahura-sultan-adam-di-kalimantan-selatan-daya-tarik-harga-tiket-dan-rute",
-    "selected": true
-    },
-    {
-        "name": "Bukit Matang Kaladan",
-        "address": "Kecamatan Aranio, Kabupaten Banjar, Kalimantan Selatan",
-        "category": "Wisata Alam",
-        "rating": 4.3,
-        "distance": 56.6,
-        "time": 76,
-        "description": "Akses via Bendungan Riam Kanan, lalu trekking 15 sampai 30 menit. Disarankan pakai kendaraan pribadi dan sepatu outdoor.",
-        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Bukit%20Matang%20Kaladan",
-        "id": "destinasi_1746760000006",
-        "image": "https://meratusgeopark.org/wp-content/uploads/2023/10/DJI_0034-scaled.jpg",
-        "source": "https://dewatiket.id/blog/tempat-wisata-di-banjarbaru/",
-        "selected": true
-    },
-  ],
+    "selected": true,
+    "openDays": "Setiap Hari",
+    "openHours": "08.00-16.00 WITA"
+  },
+  {
+  "id": "destinasi_pusat_informasi_geopark",
+  "name": "Pusat Informasi Geopark Meratus",
+  "address": "Desa Mandiangin Timur, Kecamatan Aranio, Kabupaten Banjar, Kalimantan Selatan",
+  "category": "Geopark Meratus - Rute Selatan",
+  "rating": 4.7,
+  "distance": 51,
+  "time": 73,
+  "description": "Pusat Informasi Geopark Meratus berada di Desa Mandiangin, dalam kawasan Tahura Sultan Adam. Dapat dicapai dengan kendaraan pribadi atau umum dari Banjarmasin, melewati Museum Lambung Mangkurat dan terus ke Mandiangin. Tempat ini terdiri dari tiga bangunan: Geological Info Center, Geopark Center, dan Geo-Theater.",
+  "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Pusat+Informasi+Geopark+Meratus+Mandiangin",
+  "image": "https://meratusgeopark.org/wp-content/uploads/2023/10/14-Pusat-Informasi-Geopark-600x338.jpg",
+  "source": "https://meratusgeopark.org/situs-pusat-informasi-geopark/",
+  "selected": true,
+  "openDays": "Setiap Hari",
+  "openHours": "08.00–17.00"
+  },
+  {
+    "name": "Bukit Matang Kaladan",
+    "address": "Kecamatan Aranio, Kabupaten Banjar, Kalimantan Selatan",
+    "category": "Geopark Meratus - Rute Timur",
+    "rating": 4.3,
+    "distance": 56.6,
+    "time": 76,
+    "description": "Akses via Bendungan Riam Kanan, lalu trekking 15 sampai 30 menit. Disarankan pakai kendaraan pribadi dan sepatu outdoor.",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Bukit%20Matang%20Kaladan",
+    "id": "destinasi_1746760000006",
+    "image": "https://meratusgeopark.org/wp-content/uploads/2023/10/DJI_0034-scaled.jpg",
+    "source": "https://dewatiket.id/blog/tempat-wisata-di-banjarbaru/",
+    "selected": true,
+    "openDays": "Setiap Hari",
+    "openHours": "06.00-18.00 WITA"
+  },
+  {
+  "id": "destinasi_bendungan_riam_kanan",
+  "name": "Bendungan Riam Kanan",
+  "address": "Desa Tiwingan Lama, Kecamatan Aranio, Kabupaten Banjar, Kalimantan Selatan",
+  "category": "Geopark Meratus - Rute Timur",
+  "rating": 4.6,
+  "distance": 60,
+  "time": 75,
+  "description": "Bendungan Riam Kanan adalah waduk besar yang membendung Sungai Riam Kanan, dikelilingi perbukitan dan memiliki pulau-pulau geologi—situs Geopark Meratus. Akses dari Hotel Galaxy Banjarmasin melalui jalan darat (±60 km, tempuh ±75 menit), lalu menyusuri waduk dengan perahu 'klotok' untuk melihat pulau-pulau seperti Pinus, Rusa, Seran, dan Bekantan.",
+  "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Bendungan+Riam+Kanan+Aranio",
+  "image": "https://meratusgeopark.org/wp-content/uploads/2023/10/26-Bendungan-Riam-Kanan-600x338.jpg",
+  "source": "https://meratusgeopark.org/situs-bendungan-riam-kanan/",
+  "selected": true,
+  "openDays": "Setiap Hari",
+  "openHours": "08.00–17.00"
+  },
+  {
+  "id": "destinasi_pulau_pinus",
+  "name": "Pulau Pinus",
+  "address": "Desa Tiwingan Lama, Kecamatan Aranio, Kabupaten Banjar, Kalimantan Selatan",
+  "category": "Geopark Meratus - Rute Timur",
+  "rating": 4.6,
+  "distance": 60,
+  "time": 80,
+  "description": "Pulau Pinus adalah pulau di tengah Waduk Riam Kanan, dengan hutan pinus berumur puluhan tahun. Setelah tiba di tepi waduk Desa Tiwingan Lama, pengunjung lanjut naik perahu klotok sejauh ±1,4 km untuk mencapai pulau. Pulau ini dulunya adalah bukit warga sebelum dibendung, dulu ditanami pinus agar tahan air.",
+  "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Pulau+Pinus+Riam+Kanan",
+  "image": "https://meratusgeopark.org/wp-content/uploads/2025/04/33-Pulau-Pinus-600x400.jpg",
+  "source": "https://meratusgeopark.org/situs-pulau-pinus/",
+  "selected": true,
+  "openDays": "Setiap Hari",
+  "openHours": "08.00–17.00"
+  }
+
+
+],
   "kulinerKhas": [
     
     {
@@ -288,7 +464,7 @@ const initialData = {
   {
     "name": "Pusat Oleh-oleh Galuh Banjar",
     "address": "Jl. S. Parman No. 5, Belitung Selatan, Banjarmasin Barat, Kalimantan Selatan",
-    "category": "Oleh-oleh Kuliner & Kain Sasirangan",
+    "category": "Oleh-oleh Kuliner & Cendera Mata",
     "rating": 4.4,
     "distance": 3.9,
     "time": 12,
@@ -302,7 +478,7 @@ const initialData = {
   {
     "name": "Sentra Matahari",
     "address": "Jl. Ahmad Yani KM 33 No. 12, Banjarbaru, Kalimantan Selatan",
-    "category": "Pusat Oleh-oleh Khas Kalimantan",
+    "category": "Oleh-oleh Kuliner & Cendera Mata",
     "rating": 4.6,
     "distance": 32,
     "time": 55,
@@ -891,25 +1067,53 @@ const getNextSectionName = () => {
           </div>
           
          {/* Item Grid - Updated to match homepage theme */}
-        <section className="py-6 md:py-12">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-8">
+        <section className="py-4 md:py-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-8">
             {filteredItems.map((item) => (
               <div key={item.id} className="bg-white p-3 md:p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                 <div className="h-32 md:h-40 w-full rounded-md mx-auto mb-2 md:mb-3 overflow-hidden">
-                    <img src={item.image || 'https://placehold.co/400x300.png'} alt={item.name} className="w-full h-full object-cover" />
+                  <img src={item.image || 'https://placehold.co/400x300.png'} alt={item.name} className="w-full h-full object-cover" />
                 </div>
                 <div>
-                    <a href={item.source || `https://www.google.com/search?q=${encodeURIComponent(item.name)}`} target="_blank" rel="noopener noreferrer">
-                        <h3 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-snowymint-900 hover:text-snowymint-700 transition-colors">{item.name}</h3>
-                    </a>
-                    <p className="text-gray-600 text-xs mb-2 md:mb-3 line-clamp-2">{item.address}</p>
-                    <p className="text-gray-700 text-xs md:text-sm mb-3 line-clamp-3">{item.description}</p>
-                    <div className="flex items-center justify-between mb-3">
-                        <div className="flex items-center text-gray-600 text-xs md:text-sm">
-                            <LocationIcon />
-                            <span className="ml-1">{item.distance} km • {item.time} mnt</span>
-                        </div>
+                  <a href={item.source || `https://www.google.com/search?q=${encodeURIComponent(item.name)}`} target="_blank" rel="noopener noreferrer">
+                    <h3 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-snowymint-900 hover:text-snowymint-700 transition-colors">{item.name}</h3>
+                  </a>
+                  <p className="text-gray-600 text-xs mb-2 md:mb-3 line-clamp-2">{item.address}</p>
+                  
+                  {/* Keterangan hari dan jam buka */}
+                  {(item.openDays || item.openHours) && (
+                    <div className="mb-3 rounded-md">
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                        {item.openDays && (
+                          <div className="flex items-center text-gray-700 text-xs md:text-sm">
+                            <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <span className="text-gray-600">{item.openDays}</span>
+                          </div>
+                        )}
+                        
+                        {item.openHours && (
+                          <div className="flex items-center text-gray-700 text-xs md:text-sm">
+                            <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span className="text-gray-600">{item.openHours}</span>
+                          </div>
+                        )}
+                      </div>
                     </div>
+                  )}
+                  
+                  <p className="text-gray-700 text-xs md:text-sm mb-3 line-clamp-5">{item.description}</p>
+
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center text-gray-600 text-xs md:text-sm">
+                      <LocationIcon />
+                      <span className="ml-1">{item.distance} km • {item.time} mnt</span>
+                    </div>
+                  </div>
+                  
                   <div className="mt-3 flex flex-wrap gap-2">
                     <a 
                       href={item.googleMapsUrl || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.name + ', ' + item.address)}`}

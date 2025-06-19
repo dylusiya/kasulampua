@@ -170,7 +170,7 @@ export default function Kontak() {
                   </div>
                   <div className="text-center">
                     <h3 className="text-lg font-bold text-gray-900 mb-1">
-                      Abdurrahman, SST., M.Si.
+                      Abdurrahman
                     </h3>
                     <p className="text-blue-600 font-medium text-sm mb-3">
                       Statistisi Madya BPS Provinsi Kalimantan Selatan
@@ -193,7 +193,7 @@ export default function Kontak() {
                   </div>
                 </div>
 
-                {/* Bappeda 
+                {/* Bappeda */}
                 <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
                   <div className="text-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-green-600 text-white flex items-center justify-center mx-auto mb-3">
@@ -205,30 +205,30 @@ export default function Kontak() {
                   </div>
                   <div className="text-center">
                     <h3 className="text-lg font-bold text-gray-900 mb-1">
-                      Ir. H. Muhammad Rizki, M.T.
+                      Arief Hidayat
                     </h3>
                     <p className="text-green-600 font-medium text-sm mb-3">
-                      Kepala Bappeda Provinsi Kalimantan Selatan
+                      Fungsional Perencana Bappeda Prov Kalsel
                     </p>
                     
                     <div className="space-y-2">
                       <div className="flex items-center justify-center">
                         <PhoneIcon className="w-4 h-4 text-gray-500 mr-2 flex-shrink-0" />
-                        <a href="tel:05113304200" className="text-gray-700 hover:text-green-600 transition-colors text-sm">
-                          0511 3304200
+                        <a href="https://wa.me/6282227468884" className="text-gray-700 hover:text-green-600 transition-colors text-sm">
+                          082227468884
                         </a>
                       </div>
                       <div className="flex items-center justify-center">
                         <MailIcon className="w-4 h-4 text-gray-500 mr-2 flex-shrink-0" />
-                        <a href="mailto:bappeda@kalselprov.go.id" className="text-gray-700 hover:text-green-600 transition-colors text-sm">
-                          bappeda@kalselprov.go.id
+                        <a href="mailto:ariefhidayatkalsel@gmail.com" className="text-gray-700 hover:text-green-600 transition-colors text-sm">
+                          ariefhidayatkalsel@gmail.com
                         </a>
                       </div>
                     </div>
                   </div>
-                </div> */}
+                </div> 
 
-                {/* Bank Indonesia 
+                {/* Bank Indonesia */}
                 <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
                   <div className="text-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-red-600 text-white flex items-center justify-center mx-auto mb-3">
@@ -240,63 +240,63 @@ export default function Kontak() {
                   </div>
                   <div className="text-center">
                     <h3 className="text-lg font-bold text-gray-900 mb-1">
-                      Drs. Haryono Kurniawan, M.Si.
+                      Teguh Arifyanto
                     </h3>
                     <p className="text-red-600 font-medium text-sm mb-3">
-                      Kepala KP BI Kalimantan Selatan
+                      Ekonom Senior Bank Indonesia KP Kalsel
                     </p>
                     
                     <div className="space-y-2">
                       <div className="flex items-center justify-center">
                         <PhoneIcon className="w-4 h-4 text-gray-500 mr-2 flex-shrink-0" />
-                        <a href="tel:05113266500" className="text-gray-700 hover:text-red-600 transition-colors text-sm">
-                          0511 3266500
+                        <a href="https://wa.me/6281320607447" className="text-gray-700 hover:text-red-600 transition-colors text-sm">
+                          081320607447
                         </a>
                       </div>
                       <div className="flex items-center justify-center">
                         <MailIcon className="w-4 h-4 text-gray-500 mr-2 flex-shrink-0" />
-                        <a href="mailto:kpwkalsel@bi.go.id" className="text-gray-700 hover:text-red-600 transition-colors text-sm">
-                          kpwkalsel@bi.go.id
+                        <a href="mailto:teguh_a@bi.go.id" className="text-gray-700 hover:text-red-600 transition-colors text-sm">
+                          teguh_a@bi.go.id
                         </a>
                       </div>
                     </div>
                   </div>
-                </div> */}
+                </div> 
 
-                {/* DJPB 
+                {/* DJPB */}
                 <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
                   <div className="text-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-purple-600 text-white flex items-center justify-center mx-auto mb-3">
                       <UserIcon className="w-8 h-8" />
                     </div>
                     <div className="bg-purple-50 text-purple-700 text-xs font-semibold py-1 px-3 rounded-full inline-block">
-                      DJPB
+                      Kanwil DJPb
                     </div>
                   </div>
                   <div className="text-center">
                     <h3 className="text-lg font-bold text-gray-900 mb-1">
-                      Drs. H. Supriadi, M.M.
+                      Juanda
                     </h3>
                     <p className="text-purple-600 font-medium text-sm mb-3">
-                      Kepala KPPN Banjarmasin
+                      Kepala Bidang Pembinaan Pelaksanaan Anggaran II, Kanwil DJPb Kalsel
                     </p>
                     
                     <div className="space-y-2">
                       <div className="flex items-center justify-center">
                         <PhoneIcon className="w-4 h-4 text-gray-500 mr-2 flex-shrink-0" />
-                        <a href="tel:05113305200" className="text-gray-700 hover:text-purple-600 transition-colors text-sm">
-                          0511 3305200
+                        <a href="https://wa.me/628117840778" className="text-gray-700 hover:text-purple-600 transition-colors text-sm">
+                          08117840778
                         </a>
                       </div>
                       <div className="flex items-center justify-center">
                         <MailIcon className="w-4 h-4 text-gray-500 mr-2 flex-shrink-0" />
-                        <a href="mailto:kppn.banjarmasin@kemenkeu.go.id" className="text-gray-700 hover:text-purple-600 transition-colors text-sm">
-                          kppn.banjarmasin@kemenkeu.go.id
+                        <a href="mailto:juanda78@kemenkeu.go.id" className="text-gray-700 hover:text-purple-600 transition-colors text-sm">
+                          juanda78@kemenkeu.go.id
                         </a>
                       </div>
                     </div>
                   </div>
-                </div>*/}
+                </div>
               </div>
             </div>
           </div>

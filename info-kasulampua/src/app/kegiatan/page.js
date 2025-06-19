@@ -78,10 +78,14 @@ const timelineDetailData = [
       {
         title: "Kedatangan Peserta",
         time: "(sepanjang hari)",
-        icon: "user-group",
+        icon: "map",
         details: [
-          "Check-in hotel masing-masing",
-          "Koordinasi awal dengan panitia"
+          {
+            text: "Check-in hotel masing-masing"
+          },
+          {
+            text: "Koordinasi awal dengan panitia"
+          }
         ]
       }
     ]
@@ -91,20 +95,12 @@ const timelineDetailData = [
     events: [
       {
         title: "Registrasi Peserta",
-        time: "(08.30–09.00)",
+        time: "(08.00–09.00)",
         icon: "user-group",
         details: [
-          "Lokasi: Galaxy Hotel Banjarmasin"
-        ]
-      },
-      {
-        title: "Pembukaan",
-        time: "(08.30–09.00)",
-        icon: "message-circle",
-        details: [
-          "Tarian Penyambutan – Panitia",
-          "Menyanyikan Lagu Indonesia Raya",
-          "Pembacaan Doa – Kanwil Kemenag Provinsi Kalimantan Selatan"
+          {
+            text: "Lokasi: Galaxy Hotel Banjarmasin"
+          }
         ]
       },
       {
@@ -112,57 +108,79 @@ const timelineDetailData = [
         time: "(09.00–10.00)",
         icon: "message-circle",
         details: [
-          "Laporan Penyelenggara Konreg PDRB Kasulampua 2025 – Kepala Bappeda Provinsi Kalimantan Selatan",
-          "Opening Speech & Launching Portal Satu Data KASULAMPUA – Kepala BPS RI",
-          "Sambutan & Pembukaan oleh Gubernur Kalimantan Selatan",
-          "Penyerahan Plakat – Panitia",
-          "Foto Bersama – Panitia",
-          "Kunjungan ke Stand UMKM – DJPb Provinsi Kalimantan Selatan"
+          {
+            text: "Laporan Penyelenggara Konreg PDRB Kasulampua 2025",
+            pemateri: "Kepala Bappeda Provinsi Kalimantan Selatan",
+            materiLink:"https://drive.google.com/file/d/1KtygAWDCSyOexzc7trjp7cr-Pd36ZIXp/view?usp=sharing"
+          },
+          {
+            text: "Opening Speech & Launching Portal Satu Data KASULAMPUA",
+            pemateri: "Wakil Kepala BPS RI",
+
+          },
+          {
+            text: "Sambutan & Pembukaan",
+            pemateri: "Gubernur Kalimantan Selatan"
+          }
         ]
       },
       {
         title: "Coffee Break",
         time: "(10.00–10.15)",
         icon: "coffee",
-        details: [
-          "Disediakan oleh Panitia"
-        ]
-      },
-      {
-        title: "Opening Speech Narasumber",
-        time: "(10.15–10.30)",
-        icon: "message-circle",
-        details: [
-          "Deputi Neraca dan Analisis Statistik – BPS RI"
-        ]
+        details: []
       },
       {
         title: "Pemaparan Materi",
-        time: "(10.30–12.30)",
+        time: "(10.15–12.30)",
         icon: "message-circle",
         details: [
-          "Moderator: BAPPENAS RI",
-          "- Arah Kebijakan Nasional Penguatan Perekonomian dan Sinergi Pembangunan Kasulampua – BAPPENAS RI",
-          "- Transformasi Ekonomi Kerakyatan dan Digitalisasi di KASULAMPUA – BPS RI",
-          "- Dukungan Bank Indonesia pada Ekonomi Inklusif Kawasan Kasulampua – Bank Indonesia",
-          "- Dukungan Kementerian Keuangan pada Pertumbuhan Ekonomi Kasulampua – Kementerian Keuangan RI",
-          "- Diskusi – Panitia"
+          {
+            text: "Opening Narasumber",
+            pemateri: "Deputi Neraca dan Analisis Statistik/Plt. Sestama BPS",
+            materiLink: "https://drive.google.com/file/d/1mVmR6OqR0bi0FVYqTO5kLqHumRM-LZSD/view?usp=drive_link"
+          },
+          {
+            text: "Arah Kebijakan Pembangunan Kewilayahan KASULAMPUA",
+            pemateri: "BAPPENAS RI",
+            materiLink:"https://drive.google.com/file/d/11_tJ7Z7Uj2NFEBqAc-vlYZoZ32nt97FP/view?usp=drive_link"
+          },
+          {
+            text: "Transformasi Ekonomi Kerakyatan yang Inklusif dan Berkelanjutan Didukung Penguatan Digitalisasi",
+            pemateri: "BPS RI",
+            materiLink: "https://drive.google.com/file/d/1IPseRDWA2sSK5Vjg17xD5-iRdQPNRv3c/view?usp=drive_link"
+          },
+          {
+            text: "Dukungan Bank Indonesia dalam Pertumbuhan Ekonomi Inklusif di Kawasan Kasulampua",
+            pemateri: "Bank Indonesia",
+            materiLink:"https://drive.google.com/file/d/1r3HLMyIlc7QnGktzTj5OTwlHp9aFFfeq/view?usp=drive_link",
+          },
+          {
+            text: "Arah Kebijakan Fiskal Mendukung Akselerasi Pertumbuhan Ekonomi Kasulampua",
+            pemateri: "Kementerian Keuangan RI",
+            materiLink: "https://drive.google.com/file/d/1i5rGm40WaYwsMMSNAWjBw5BbSiPgiRmG/view?usp=drive_link"
+          }
         ]
       },
       {
         title: "ISHOMA",
         time: "(12.30–13.30)",
-        icon: "user-group",
-        details: [
-          "Lokasi: Restoran Galaxy Hotel Banjarmasin – Panitia"
-        ]
+        icon: "coffee",
+        details: []
       },
       {
         title: "Pemaparan Hasil Rumusan Kesepakatan",
         time: "(13.30–14.30)",
         icon: "message-circle",
         details: [
-          "Kepala BPS Provinsi Kalimantan Selatan"
+          {
+            text: "Pemaparan Hasil Perumusan Kesepakatan",
+             materiLink: "https://drive.google.com/file/d/1ZJf5YLww4wLxIlZUW_-pYbinEAN8Y9N9/view?usp=drive_link"
+
+          },
+          {
+            text: "Penandatanganan Hasil Kesepakatan Konreg PDRB Kasulampua Tahun 2025"
+          }
         ]
       },
       {
@@ -180,8 +198,7 @@ const timelineDetailData = [
         title: "Kepulangan Peserta",
         time: "(sesuai jadwal penerbangan)",
         icon: "map",
-        details: [
-        ]
+        details: []
       }
     ]
   }
@@ -190,6 +207,14 @@ const timelineDetailData = [
 
 // Data dokumen terkait kegiatan
 const dokumenData = [
+  {
+    id: "dokumen2",
+    title: "Kesepakatan Wasaka (Naskah Kesepakatan dan Rekomendasi Konreg PDRB KASULAMPUA 2025)",
+    date: "12 Juni 2025",
+    format: "PDF",
+    size: "2.5 MB",
+    driveLink: "https://drive.google.com/file/d/1ZJf5YLww4wLxIlZUW_-pYbinEAN8Y9N9/view?usp=drive_link"
+  },
   {
     id: "dokumen1", 
     title: "Surat Pemberitahuan Konreg PDRB",
@@ -203,12 +228,69 @@ const dokumenData = [
 // Data notula
 const notulaData = [
   {
-    id: "notula1",
-    title: "Notula Coming Soon",
+    id: "materiA",
+    title: "Laporan Penyelenggaraan",
     tanggal: "12 Juni 2025",
     format: "PDF",
-    size: "1.2 MB",
-    driveLink: "https://drive.google.com/file/d/your-notula-id-1/view"
+    size: "31.2 MB",
+    driveLink: "https://drive.google.com/file/d/1KtygAWDCSyOexzc7trjp7cr-Pd36ZIXp/view?usp=drive_link"
+  },
+  {
+    id: "materiC",
+    title: "Notula Paparan Konreg Kasulampua 2025",
+    tanggal: "12 Juni 2025",
+    format: "PDF",
+    size: "1.0 MB",
+    driveLink: "https://drive.google.com/file/d/1OHrjFDNLYne_GqrRuf60-nnKUnGhXg7t/view?usp=drive_link"
+  },  
+  {
+    id: "materiD",
+    title: "Daftar Hadir Konreg Kasulampua 2025",
+    tanggal: "12 Juni 2025",
+    format: "PDF",
+    size: "10.5 MB",
+    driveLink: "https://drive.google.com/file/d/1L0_9doTQJn51nkM0HPzpbdHjqDHrbi5u/view?usp=drive_link"
+  },
+  {
+    id: "materi0",
+    title: "Peningkatan Kontribusi KASULAMPUA terhadap Perekonomian Nasional melalui Transformasi Ekonomi Kerakyatan yang Inklusif dan Berkelanjutan didukung Penguatan Digitalisasi",
+    tanggal: "12 Juni 2025",
+    format: "PDF",
+    size: "2.5 MB",
+    driveLink: "https://drive.google.com/file/d/1mVmR6OqR0bi0FVYqTO5kLqHumRM-LZSD/view?usp=drive_link"
+  },
+  {
+    id: "materi1",
+    title: "Arah Kebijakan Pembangunan Kewilayahan KASULAMPUA",
+    tanggal: "12 Juni 2025",
+    format: "PDF",
+    size: "4.6 MB",
+    driveLink: "https://drive.google.com/file/d/11_tJ7Z7Uj2NFEBqAc-vlYZoZ32nt97FP/view?usp=drive_link"
+  },
+ 
+  {
+    id: "materi2",
+    title: "Transformasi Ekonomi Kerakyatan yang Inklusif dan Berkelanjutan Didukung Penguatan Digitalisasi",
+    tanggal: "12 Juni 2025",
+    format: "PDF",
+    size: "2.2 MB",
+    driveLink: "https://drive.google.com/file/d/1IPseRDWA2sSK5Vjg17xD5-iRdQPNRv3c/view?usp=drive_link"
+  },
+  {
+    id: "materi3",
+    title: "Dukungan Bank Indonesia dalam Pertumbuhan Ekonomi Inklusif di Kawasan Kasulampua",
+    tanggal: "12 Juni 2025",
+    format: "PDF",
+    size: "3.8 MB",
+    driveLink: "https://drive.google.com/file/d/1r3HLMyIlc7QnGktzTj5OTwlHp9aFFfeq/view?usp=drive_link"
+  },
+  {
+    id: "materi4",
+    title: "Arah Kebijakan Fiskal Mendukung Akselerasi Pertumbuhan Ekonomi Kasulampua",
+    tanggal: "12 Juni 2025",
+    format: "PDF",
+    size: "4.9 MB",
+    driveLink: "https://drive.google.com/file/d/1i5rGm40WaYwsMMSNAWjBw5BbSiPgiRmG/view?usp=drive_link"
   }
 ];
 
@@ -342,11 +424,42 @@ const TimelineDetailComponent = () => {
                   {/* Event Details - Expandable */}
                   {isExpanded && event.details.length > 0 && (
                     <div className="pl-14 mt-3 pt-3 border-t border-gray-100">
-                      <ul className="space-y-2">
+                      <ul className="space-y-4">
                         {event.details.map((detail, detailIndex) => (
-                          <li key={detailIndex} className="text-gray-700 flex items-start">
-                            <span className="inline-block w-2 h-2 bg-gray-400 rounded-full mt-2 mr-2"></span>
-                            <span>{detail}</span>
+                          <li key={detailIndex} className="border-l-2 border-gray-200 pl-4">
+                            {/* Detail text */}
+                            <div className="flex items-start mb-2">
+                              <span className="inline-block w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                              <span className="text-gray-700 font-medium">{typeof detail === 'string' ? detail : detail.text}</span>
+                            </div>
+                            
+                            {/* Pemateri dan Download - hanya untuk object detail dan jika ada konten */}
+                            {typeof detail === 'object' && (detail.pemateri || detail.materiLink) && (
+                              <div className="ml-5 space-y-2">
+                                {/* Pemateri - hanya tampil jika ada */}
+                                {detail.pemateri && (
+                                  <div className="text-sm text-gray-600">
+                                    <span className="font-medium">Oleh: </span>
+                                    <span>{detail.pemateri}</span>
+                                  </div>
+                                )}
+                                
+                                {/* Download Material Button - hanya tampil jika ada */}
+                                {detail.materiLink && (
+                                  <div>
+                                    <a 
+                                      href={detail.materiLink} 
+                                      target="_blank" 
+                                      rel="noopener noreferrer"
+                                      className="inline-flex items-center px-2 py-1 bg-snowymint-800 hover:bg-snowymint-900 text-white text-xs font-medium rounded transition-colors"
+                                    >
+                                      <DownloadIcon className="w-3 h-3 mr-1" />
+                                      <span>Unduh Materi</span>
+                                    </a>
+                                  </div>
+                                )}
+                              </div>
+                            )}
                           </li>
                         ))}
                       </ul>
@@ -587,7 +700,9 @@ export default function InformasiPage() {
                   </div>
                   <div className="mt-4 pt-3 border-t">
                     <a 
-                      href="#" 
+                      href={notula.driveLink}
+                      target="_blank" 
+                      rel="noopener noreferrer" 
                       className="flex items-center justify-center w-full bg-snowymint-800 hover:bg-snowymint-900 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
                     >
                       <DownloadIcon className="w-4 h-4 mr-2" />
@@ -638,7 +753,10 @@ export default function InformasiPage() {
                         {notula.size}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        <a href="#" className="text-snowymint-800 hover:text-snowymint-900 flex items-center">
+                        <a href={notula.driveLink}
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="text-snowymint-800 hover:text-snowymint-900 flex items-center">
                           <DownloadIcon className="w-5 h-5 mr-1" />
                           <span>Unduh</span>
                         </a>

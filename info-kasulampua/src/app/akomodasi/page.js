@@ -333,6 +333,21 @@ const initialData = {
 
     ],
     "perbelanjaan": [
+      
+      {
+        "name": "Circle K Simpang Ulin",
+        "address": "Jl. A. Yani No.KM. 3,5, Kebun Bunga, Kec. Banjarmasin Timur, Kota Banjarmasin, Kalimantan Selatan 70235",
+        "category": "Minimarket",
+        "rating": 4.3,
+        "distance": 0.45,
+        "time": 3,
+        "description": "Minimarket modern yang  menyediakan makanan ringan, minuman, dan kebutuhan harian.",
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Circle%20K%20Simpang%20Ulin",
+        "id": "minimarket_1746752100012_ckulin",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Circle_K_logo_2015.svg",
+        "source": "https://www.circlekindo.com/",
+        "selected": true
+      },
       {
         "name": "Duta Mall Banjarmasin",
         "address": "Jl. A. Yani No.KM. 2,5, Melayu, Kec. Banjarmasin Tengah, Kota Banjarmasin, Kalimantan Selatan 70232",
@@ -1245,7 +1260,7 @@ const handleLogout = () => {
           </div>
           
          {/* Item Grid - Updated to match homepage theme */}
-        <section className="py-6 md:py-12">
+        <section className="py-4 md:py-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-8">
             {filteredItems.map((item) => (
               <div key={item.id} className="bg-white p-3 md:p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">

@@ -399,9 +399,9 @@ export default function GaleriPage() {
           {/* Mobile Navigation */}
           {mobileMenuOpen && (
             <nav className="pt-3 pb-1 space-y-1 md:hidden">
-              <Link href="/" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">
+            <Link href="/" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">
                 Beranda
-              </Link>
+            </Link>
               <a href="/kegiatan" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">Kegiatan</a>
               <a href="/akomodasi" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">Akomodasi</a>
               <a href="/wisata" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">Wisata</a>
@@ -491,94 +491,35 @@ export default function GaleriPage() {
             </select>
           </div>
           
-          {/* Albums Grid */}
-          <section className="py-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredAlbums.map((album) => (
-                <div key={album.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden">
-                  {/* Preview Images Grid */}
-                  <div className="grid grid-cols-2 gap-1 h-48">
-                    {album.previewImages.slice(0, 4).map((image, index) => (
-                      <div key={index} className="relative overflow-hidden">
-                        <img 
-                          src={image || 'https://placehold.co/200x150.png'} 
-                          alt={`Preview ${index + 1}`} 
-                          className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                        />
-                        {index === 3 && album.totalPhotos > 4 && (
-                          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                            <span className="text-white font-semibold text-lg">
-                              +{album.totalPhotos - 4}
-                            </span>
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                  
-                  {/* Album Info */}
-                  <div className="p-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="inline-block bg-snowymint-100 text-snowymint-800 text-xs px-2 py-1 rounded">
-                        {album.category}
-                      </span>
-                      <span className="text-sm text-gray-500">
-                        {formatDate(album.date)}
-                      </span>
-                    </div>
-                    
-                    <h3 className="text-lg font-semibold mb-2 text-gray-800 line-clamp-2">
-                      {album.title}
-                    </h3>
-                    
-                    <p className="text-gray-600 text-sm mb-3 line-clamp-3">
-                      {album.description}
-                    </p>
-                    
-                    <div className="flex items-center justify-between text-sm text-gray-500 mb-3">
-                      <span>{album.totalPhotos} foto</span>
-                    </div>
-                    
-                    <div className="flex flex-wrap gap-2">
-                      <a 
-                        href={album.oneDriveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-snowymint-800 text-white px-3 py-2 rounded text-sm hover:bg-snowymint-900 transition-colors cursor-pointer inline-flex items-center flex-1 justify-center"
-                      >
-                        <span className="mr-1">Lihat Semua Foto</span>
-                        <ExternalLinkIcon />
-                      </a>
-                      
-                      {/* Only show edit and delete buttons for admins */}
-                      {isAdmin && (
-                        <>
-                          <button 
-                            onClick={() => handleEdit(album)} 
-                            className="bg-blue-500 text-white px-3 py-2 rounded text-sm hover:bg-blue-600 transition-colors cursor-pointer"
-                          >
-                            Edit
-                          </button>
-                          <button 
-                            onClick={() => handleDelete(album.id)} 
-                            className="bg-red-500 text-white px-3 py-2 rounded text-sm hover:bg-red-600 transition-colors cursor-pointer"
-                          >
-                            Hapus
-                          </button>
-                        </>
-                      )}
-                    </div>
-                  </div>
+          {/* Coming Soon Section */}
+            <section className="py-12 md:py-20">
+            <div className="text-center">
+                <div className="mb-8">
+                <div className="inline-block p-4 bg-snowymint-100 rounded-full mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-snowymint-800">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
                 </div>
-              ))}
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    Galeri Foto Segera Hadir
+                </h2>
+                <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+                    Kami sedang mempersiapkan galeri foto dokumentasi kegiatan Konreg PDRB Kasulampua 2025. 
+                    Nantikan koleksi foto resmi yang akan segera tersedia!
+                </p>
+                <div className="inline-flex items-center bg-blue-50 text-blue-700 px-4 py-2 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <span className="font-medium">Status: Dalam Persiapan</span>
+                </div>
+                </div>
             </div>
-            
-            {filteredAlbums.length === 0 && (
-              <div className="text-center py-12">
-                <p className="text-gray-500 text-lg">Belum ada album foto untuk kategori ini.</p>
-              </div>
-            )}
-          </section>
+            </section>
           
           {/* Add/Edit Form Modal - Only show if admin is logged in */}
           {isAdmin && showAddForm && (
