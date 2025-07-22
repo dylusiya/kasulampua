@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Kasulampua Information Center
 
-## Getting Started
+**Pusat Informasi Peserta Konsultasi Regional PDRB Kalimantan, Sulawesi, Maluku, dan Papua**
 
-First, run the development server:
+A comprehensive information hub for participants of the Kasulampua Regional PDRB (Gross Regional Domestic Product) Consultation activities.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🌟 About
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The Kasulampua Information Center serves as a centralized platform providing essential information and resources for participants attending regional PDRB consultation activities across Kalimantan, Sulawesi, Maluku, and Papua regions of Indonesia.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## ✨ Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **📰 Latest Updates**: Stay informed with current information about PDRB activities in the Kasulampua region
+- **🏨 Accommodation Guide**: Comprehensive list of recommended hotels and lodging options
+- **🚗 Transportation Info**: Transportation options and logistics to support participant mobility
+- **🏖️ Tourism Recommendations**: Curated list of tourist attractions and leisure activities for downtime
+- **💻 Online Participation**: Easy access to virtual events via Zoom and YouTube Live platforms
+- **📱 Mobile-Friendly**: Responsive design for access across all devices
 
-## Learn More
+## 🎯 Target Audience
 
-To learn more about Next.js, take a look at the following resources:
+- PDRB consultation participants
+- Government officials and stakeholders
+- Regional development professionals
+- Academic researchers and analysts
+- Anyone interested in regional economic development in Eastern Indonesia
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚀 Getting Started
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Visit [https://info.kasulampua.id/](https://info.kasulampua.id/) to access:
 
-## Deploy on Vercel
+1. **Event Information** - Check the latest PDRB consultation schedules and updates
+2. **Travel Planning** - Browse accommodation and transportation options
+3. **Local Attractions** - Discover recommended tourism spots in the region
+4. **Virtual Access** - Join online sessions through provided Zoom or YouTube Live links
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 License
+
+This is a government information platform operated for public service purposes related to regional economic development consultations.
+
+---
+
+**Note**: This platform is specifically designed to support participants in regional PDRB consultation activities and provide comprehensive travel and activity information for the Kasulampua regions.
+
+For the most up-to-date information, always refer to the official website: [https://info.kasulampua.id/](https://info.kasulampua.id/)
