@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 // Icon components
@@ -24,34 +23,11 @@ const MailIcon = () => (
   </svg>
 );
 
-const LogoutIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-    <polyline points="16 17 21 12 16 7"></polyline>
-    <line x1="21" y1="12" x2="9" y2="12"></line>
-  </svg>
-);
-
-const DownloadIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-    <polyline points="7 10 12 15 17 10"></polyline>
-    <line x1="12" y1="15" x2="12" y2="3"></line>
-  </svg>
-);
-
 const ExternalLinkIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
     <polyline points="15 3 21 3 21 9"></polyline>
     <line x1="10" y1="14" x2="21" y2="3"></line>
-  </svg>
-);
-
-const PlusIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="12" y1="5" x2="12" y2="19"></line>
-    <line x1="5" y1="12" x2="19" y2="12"></line>
   </svg>
 );
 
@@ -110,39 +86,14 @@ export default function GaleriPage() {
   // State for data
   const [data, setData] = useState(initialData);
   const [filterCategory, setFilterCategory] = useState('Semua');
-  
-  // User state - null means guest
-  const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   
   // Mobile states
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
-  // Admin CRUD states
-  const [showAddForm, setShowAddForm] = useState(false);
-  const [editingItem, setEditingItem] = useState(null);
-
-  const [formData, setFormData] = useState({
-    id: '',
-    title: '',
-    description: '',
-    date: '',
-    previewImages: ['', '', '', ''],
-    totalPhotos: 0,
-    oneDriveUrl: '',
-    category: ''
-  });
-  
-  // Check user authentication and load data
+  // Load data on mount
   useEffect(() => {
-    // Load user from localStorage (could be null for guests)
-    const userData = JSON.parse(localStorage.getItem('user') || 'null');
-    
-    // Set user state (will be null for guests)
-    setUser(userData);
-    
-    // Load saved data from localStorage
-    let savedData = JSON.parse(localStorage.getItem('galeriData') || 'null');
+    const savedData = JSON.parse(localStorage.getItem('galeriData') || 'null');
     
     if (savedData) {
       setData(savedData);
@@ -172,145 +123,6 @@ export default function GaleriPage() {
     return albums.filter(album => album.category === filterCategory);
   };
   
-  // Form handlers (only available for logged-in users)
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
-  
-  const handlePreviewImageChange = (index, value) => {
-    const newPreviewImages = [...formData.previewImages];
-    newPreviewImages[index] = value;
-    setFormData({
-      ...formData,
-      previewImages: newPreviewImages
-    });
-  };
-
-  // Handle logout
-  const handleLogout = () => {
-    localStorage.removeItem('user');
-    window.location.href = '/login';
-  };
-  
-  // Handle download data
-  const handleDownloadData = () => {
-    // Get the latest data from state
-    const dataToDownload = JSON.stringify(data, null, 2);
-        
-    // Create a blob with the data
-    const blob = new Blob([dataToDownload], { type: 'application/json' });
-        
-    // Create a URL for the blob
-    const url = URL.createObjectURL(blob);
-        
-    // Create a link element
-    const link = document.createElement('a');
-        
-    // Set link properties
-    link.href = url;
-    link.download = `kasulampua_galeri_${new Date().toISOString().split('T')[0]}.json`;
-        
-    // Append to body
-    document.body.appendChild(link);
-        
-    // Trigger download
-    link.click();
-        
-    // Clean up
-    URL.revokeObjectURL(url);
-    document.body.removeChild(link);
-  };
-  
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    // Generate a random ID if adding new item
-    const newAlbum = {
-      ...formData,
-      id: editingItem ? editingItem.id : `album_${Date.now()}`,
-      previewImages: formData.previewImages.filter(img => img.trim() !== '')
-    };
-    
-    // Update data based on whether we're editing or adding
-    if (editingItem) {
-      const updatedAlbums = data.albums.map(album => 
-        album.id === editingItem.id ? newAlbum : album
-      );
-      setData({
-        ...data,
-        albums: updatedAlbums
-      });
-    } else {
-      setData({
-        ...data,
-        albums: [...data.albums, newAlbum]
-      });
-    }
-    
-    // Save to localStorage
-    localStorage.setItem('galeriData', JSON.stringify({
-      ...data,
-      albums: editingItem 
-        ? data.albums.map(album => album.id === editingItem.id ? newAlbum : album)
-        : [...data.albums, newAlbum]
-    }));
-    
-    // Reset form
-    resetForm();
-  };
-  
-  const resetForm = () => {
-    setFormData({
-      id: '',
-      title: '',
-      description: '',
-      date: '',
-      previewImages: ['', '', '', ''],
-      totalPhotos: 0,
-      oneDriveUrl: '',
-      category: ''
-    });
-    setEditingItem(null);
-    setShowAddForm(false);
-  };
-  
-  const handleEdit = (album) => {
-    setEditingItem(album);
-    setFormData({
-      ...album,
-      previewImages: [...album.previewImages, '', '', '', ''].slice(0, 4)
-    });
-    setShowAddForm(true);
-  };
-  
-  const handleDelete = (id) => {
-    if (window.confirm('Apakah Anda yakin ingin menghapus album ini?')) {
-      const updatedAlbums = data.albums.filter(album => album.id !== id);
-      const updatedData = {
-        ...data,
-        albums: updatedAlbums
-      };
-      setData(updatedData);
-      
-      // Save to localStorage
-      localStorage.setItem('galeriData', JSON.stringify(updatedData));
-    }
-  };
-  
-  // Function to handle clicking outside modals
-  const handleModalOutsideClick = (e, setterFunction) => {
-    if (e.target === e.currentTarget) {
-      setterFunction(false);
-      if (setterFunction === setShowAddForm) {
-        resetForm();
-      }
-    }
-  };
-  
   // Format date
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -332,9 +144,6 @@ export default function GaleriPage() {
   
   const categories = getCategories();
   const filteredAlbums = getFilteredAlbums();
-  
-  // Check if user is logged in and has admin privileges
-  const isAdmin = user && user.isLoggedIn;
   
   return (
     <div className="min-h-screen bg-white">
@@ -375,15 +184,6 @@ export default function GaleriPage() {
               <Link href="/tentang" className="font-medium text-gray-800 hover:text-snowymint-900 transition-colors">
                 Tentang
               </Link>
-              {isAdmin && (
-                <button 
-                  onClick={handleLogout} 
-                  className="bg-snowymint-800 text-white px-3 py-1 rounded text-sm flex items-center hover:bg-snowymint-900 transition-colors cursor-pointer"
-                >
-                  <LogoutIcon />
-                  <span className="ml-1">Logout</span>
-                </button>
-              )}
             </nav>
             
             {/* Mobile Menu Button */}
@@ -406,36 +206,6 @@ export default function GaleriPage() {
               <a href="/galeri" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm bg-snowymint-300">Galeri</a>
               <a href="/kontak" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">Kontak</a>
               <a href="/tentang" onClick={handleNavItemClick} className="block py-2 hover:bg-snowymint-300 px-3 rounded text-sm">Tentang</a>
-              
-              {/* Admin menu items for mobile */}
-              {isAdmin && (
-                <div className="border-t mt-2 pt-2">
-                  <button 
-                    onClick={() => {
-                      setShowAddForm(true);
-                      setMobileMenuOpen(false);
-                    }} 
-                    className="block w-full text-left py-2 hover:bg-snowymint-300 px-3 rounded text-sm"
-                  >
-                    Tambah Album
-                  </button>
-                  <button 
-                    onClick={() => {
-                      handleDownloadData();
-                      setMobileMenuOpen(false);
-                    }} 
-                    className="block w-full text-left py-2 hover:bg-snowymint-300 px-3 rounded text-sm"
-                  >
-                    Download Data
-                  </button>
-                  <button 
-                    onClick={handleLogout} 
-                    className="block w-full text-left py-2 hover:bg-snowymint-300 px-3 rounded text-sm text-red-600"
-                  >
-                    Logout
-                  </button>
-                </div>
-              )}
             </nav>
           )}
         </div>
@@ -453,26 +223,6 @@ export default function GaleriPage() {
                 Dokumentasi kegiatan Konsultasi Regional PDRB Kalimantan, Sulawesi, Maluku, dan Papua
               </p>
             </div>
-            
-            {/* Admin buttons - hidden for mobile in nav */}
-            {isAdmin && (
-              <div className="hidden md:flex space-x-3">
-                <button 
-                  onClick={() => setShowAddForm(true)} 
-                  className="bg-snowymint-800 text-white px-4 py-2 rounded hover:bg-snowymint-900 transition-colors cursor-pointer flex items-center"
-                >
-                  <PlusIcon />
-                  <span className="ml-2">Tambah Album</span>
-                </button>
-                <button 
-                  onClick={handleDownloadData} 
-                  className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors cursor-pointer flex items-center"
-                >
-                  <DownloadIcon />
-                  <span className="ml-2">Download Data</span>
-                </button>
-              </div>
-            )}
           </div>
           
           {/* Filter dropdown */}
@@ -537,34 +287,16 @@ export default function GaleriPage() {
                       <span>{album.totalPhotos} foto</span>
                     </div>
                     
-                    <div className="flex flex-wrap gap-2">
+                    <div className="mt-3">
                       <a 
                         href={album.oneDriveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-snowymint-800 text-white px-3 py-2 rounded text-sm hover:bg-snowymint-900 transition-colors cursor-pointer inline-flex items-center flex-1 justify-center"
+                        className="bg-snowymint-800 text-white px-3 py-2 rounded text-sm hover:bg-snowymint-900 transition-colors cursor-pointer inline-flex items-center justify-center w-full"
                       >
                         <span className="mr-1">Lihat Semua Foto</span>
                         <ExternalLinkIcon />
                       </a>
-                      
-                      {/* Only show edit and delete buttons for admins */}
-                      {isAdmin && (
-                        <>
-                          <button 
-                            onClick={() => handleEdit(album)} 
-                            className="bg-blue-500 text-white px-3 py-2 rounded text-sm hover:bg-blue-600 transition-colors cursor-pointer"
-                          >
-                            Edit
-                          </button>
-                          <button 
-                            onClick={() => handleDelete(album.id)} 
-                            className="bg-red-500 text-white px-3 py-2 rounded text-sm hover:bg-red-600 transition-colors cursor-pointer"
-                          >
-                            Hapus
-                          </button>
-                        </>
-                      )}
                     </div>
                   </div>
                 </div>
@@ -603,148 +335,6 @@ export default function GaleriPage() {
               </div>
             </div>
           </div>
-          
-          {/* Add/Edit Form Modal - Only show if admin is logged in */}
-          {isAdmin && showAddForm && (
-            <div 
-              className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
-              onClick={(e) => handleModalOutsideClick(e, setShowAddForm)}
-            >
-              <div className="bg-white p-4 md:p-6 rounded-lg w-full max-w-2xl max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-                <h2 className="text-lg md:text-xl font-bold mb-4">
-                  {editingItem ? 'Edit Album' : 'Tambah Album Baru'}
-                </h2>
-                
-                <form onSubmit={handleSubmit}>
-                  <div className="grid grid-cols-1 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Judul Album</label>
-                      <input
-                        type="text"
-                        name="title"
-                        value={formData.title}
-                        onChange={handleInputChange}
-                        className="w-full p-2 border rounded"
-                        required
-                      />
-                    </div>
-                    
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Deskripsi</label>
-                      <textarea
-                        name="description"
-                        value={formData.description}
-                        onChange={handleInputChange}
-                        className="w-full p-2 border rounded"
-                        rows="3"
-                        required
-                      ></textarea>
-                    </div>
-                    
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Tanggal</label>
-                        <input
-                          type="date"
-                          name="date"
-                          value={formData.date}
-                          onChange={handleInputChange}
-                          className="w-full p-2 border rounded"
-                          required
-                        />
-                      </div>
-                      
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Kategori</label>
-                        <input
-                          type="text"
-                          name="category"
-                          value={formData.category}
-                          onChange={handleInputChange}
-                          className="w-full p-2 border rounded"
-                          required
-                        />
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Total Foto</label>
-                      <input
-                        type="number"
-                        name="totalPhotos"
-                        value={formData.totalPhotos}
-                        onChange={handleInputChange}
-                        min="0"
-                        className="w-full p-2 border rounded"
-                        required
-                      />
-                    </div>
-                    
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Link OneDrive</label>
-                      <input
-                        type="url"
-                        name="oneDriveUrl"
-                        value={formData.oneDriveUrl}
-                        onChange={handleInputChange}
-                        placeholder="https://1drv.ms/f/s!..."
-                        className="w-full p-2 border rounded"
-                        required
-                      />
-                    </div>
-                    
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Foto Preview (maksimal 4)
-                      </label>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {[0, 1, 2, 3].map((index) => (
-                          <div key={index}>
-                            <label className="block text-xs text-gray-600 mb-1">
-                              Foto Preview {index + 1} {index === 0 ? '(wajib)' : '(opsional)'}
-                            </label>
-                            <input
-                              type="url"
-                              value={formData.previewImages[index]}
-                              onChange={(e) => handlePreviewImageChange(index, e.target.value)}
-                              placeholder="https://example.com/image.jpg"
-                              className="w-full p-2 border rounded text-sm"
-                              required={index === 0}
-                            />
-                            {formData.previewImages[index] && (
-                              <div className="mt-2 h-20 overflow-hidden rounded">
-                                <img 
-                                  src={formData.previewImages[index]} 
-                                  alt={`Preview ${index + 1}`} 
-                                  className="w-full h-full object-cover" 
-                                />
-                              </div>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    
-                    <div className="flex flex-col sm:flex-row justify-end gap-3 mt-2">
-                      <button
-                        type="button"
-                        onClick={resetForm}
-                        className="px-4 py-2 border rounded text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer"
-                      >
-                        Batal
-                      </button>
-                      <button
-                        type="submit"
-                        className="px-4 py-2 bg-snowymint-800 text-white rounded hover:bg-snowymint-900 transition-colors cursor-pointer"
-                      >
-                        {editingItem ? 'Update' : 'Simpan'}
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          )}
         </div>
       </main>
 
@@ -752,7 +342,7 @@ export default function GaleriPage() {
       <footer className="bg-snowymint-950 text-white py-6 md:py-8">
         <div className="container mx-auto px-3 md:px-4">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-4">
-            {/* Logo and Description - Full width on mobile */}
+            {/* Logo and Description */}
             <div className="col-span-2 md:col-span-1 text-left">
               <div className="flex items-center justify-start mb-3">
                 <img 

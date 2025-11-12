@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 // Icon components
@@ -24,32 +23,10 @@ const MailIcon = () => (
   </svg>
 );
 
-const StarIcon = ({ filled = true }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill={filled ? "#FFD700" : "none"} stroke="#FFD700" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-  </svg>
-);
-
 const LocationIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
     <circle cx="12" cy="10" r="3"></circle>
-  </svg>
-);
-
-const LogoutIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-    <polyline points="16 17 21 12 16 7"></polyline>
-    <line x1="21" y1="12" x2="9" y2="12"></line>
-  </svg>
-);
-
-const DownloadIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-    <polyline points="7 10 12 15 17 10"></polyline>
-    <line x1="12" y1="15" x2="12" y2="3"></line>
   </svg>
 );
 
@@ -168,7 +145,7 @@ const initialData = {
   "rating": 4.5,
   "distance": 20,
   "time": 45,
-  "description": "Stasiun riset dan kawasan konservasi Bekantan di Pulau Curiak. Dapat dicapai dengan perjalanan perahu mesin sekitar 30 menit dari dermaga di bawah Jembatan Barito, atau melanjutkan dari Pulau Sewangi lewat jalur sungai sejauh ±4 km.",
+  "description": "Stasiun riset dan kawasan konservasi Bekantan di Pulau Curiak. Dapat dicapai dengan perjalanan perahu mesin sekitar 30 menit dari dermaga di bawah Jembatan Barito, atau melanjutkan dari Pulau Sewangi lewat jalur sungai sejauh ±4 km.",
   "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Konservasi%20Bekantan%20Curiak",
   "image": "https://meratusgeopark.org/wp-content/uploads/2023/10/09-Konservasi-Bekantan-Curiak-600x400.jpg",
   "source": "https://meratusgeopark.org/situs-konservasi-bekantan-curiak/",
@@ -184,7 +161,7 @@ const initialData = {
   "rating": 4.7,
   "distance": 30,
   "time": 40,
-  "description": "Dua rumah adat Banjar bersejarah—Bubungan Tinggi & Gajah Baliku—berdiri di tepi Sungai Martapura di Teluk Selong Ulu. Akses: sekitar 30 km dari Hotel Galaxy Banjarmasin lewat Jl. A. Yani → Martapura. Bisa dilanjutkan dengan perahu kecil klotok di sungai untuk mendekati lokasi.",
+  "description": "Dua rumah adat Banjar bersejarah—Bubungan Tinggi & Gajah Baliku—berdiri di tepi Sungai Martapura di Teluk Selong Ulu. Akses: sekitar 30 km dari Hotel Galaxy Banjarmasin lewat Jl. A. Yani → Martapura. Bisa dilanjutkan dengan perahu kecil klotok di sungai untuk mendekati lokasi.",
   "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Rumah+Adat+Bubungan+Tinggi+Martapura",
   "image": "https://meratusgeopark.org/wp-content/uploads/2023/10/41-Rumah-Adat-bubungan-Tinggi-Gajah-Baliku-600x338.jpg",
   "source": "https://meratusgeopark.org/situs-rumah-adat-bubungan-tinggi-gajah-baliku/",
@@ -264,7 +241,7 @@ const initialData = {
   "rating": 4.6,
   "distance": 40,
   "time": 44,
-  "description": "Taman Hutan Hujan Tropika terletak sekitar 6 km selatan Banjarbaru, dalam kawasan perkantoran provinsi. Akses bisa dicapai via Jl. Dharma Praja menggunakan mobil/motor, atau bersama tour Geopark yang menyediakan shuttle dari pusat kota Banjarbaru.",
+  "description": "Taman Hutan Hujan Tropika terletak sekitar 6 km selatan Banjarbaru, dalam kawasan perkantoran provinsi. Akses bisa dicapai via Jl. Dharma Praja menggunakan mobil/motor, atau bersama tour Geopark yang menyediakan shuttle dari pusat kota Banjarbaru.",
   "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Taman+Hutan+Hujan+Tropika+Banjarbaru",
   "image": "https://meratusgeopark.org/wp-content/uploads/2023/10/10-Taman-Hutan-Hujan-Tropika.jpg",
   "source": "https://meratusgeopark.org/situs-taman-hutan-hujan-tropika/",
@@ -280,7 +257,7 @@ const initialData = {
   "rating": 4.4,
   "distance": 47,
   "time": 60,
-  "description": "Situs penambangan intan tradisional di Kel. Bangkal, Cempaka—bagian dari endapan aluvial Sungai Martapura Purba. Dapat dijangkau kira‑kira 9 km selatan Kota Banjarbaru atau sekitar 47 km dari Hotel Galaxy Banjarmasin lewat Jl. A. Yani dan Banjarbaru. Aktifitas tradisional termasuk ritual kearifan lokal (pantangan menyebut “intan”, membawa sesajen) dan dulang intan menggunakan linggangan.",
+  "description": "Situs penambangan intan tradisional di Kel. Bangkal, Cempaka—bagian dari endapan aluvial Sungai Martapura Purba. Dapat dijangkau kira‑kira 9 km selatan Kota Banjarbaru atau sekitar 47 km dari Hotel Galaxy Banjarmasin lewat Jl. A. Yani dan Banjarbaru. Aktifitas tradisional termasuk ritual kearifan lokal (pantangan menyebut 'intan', membawa sesajen) dan dulang intan menggunakan linggangan.",
   "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Penambangan+Tradisional+Intan+Cempaka+Banjarbaru",
   "image": "https://meratusgeopark.org/wp-content/uploads/2023/10/22-Penambangan-Tradisional-Intan-Cempaka-600x400.jpg",
   "source": "https://meratusgeopark.org/situs-penambangan-tradisional-intan-cempaka/",
@@ -344,7 +321,7 @@ const initialData = {
   "rating": 4.6,
   "distance": 60,
   "time": 75,
-  "description": "Bendungan Riam Kanan adalah waduk besar yang membendung Sungai Riam Kanan, dikelilingi perbukitan dan memiliki pulau-pulau geologi—situs Geopark Meratus. Akses dari Hotel Galaxy Banjarmasin melalui jalan darat (±60 km, tempuh ±75 menit), lalu menyusuri waduk dengan perahu 'klotok' untuk melihat pulau-pulau seperti Pinus, Rusa, Seran, dan Bekantan.",
+  "description": "Bendungan Riam Kanan adalah waduk besar yang membendung Sungai Riam Kanan, dikelilingi perbukitan dan memiliki pulau-pulau geologi—situs Geopark Meratus. Akses dari Hotel Galaxy Banjarmasin melalui jalan darat (±60 km, tempuh ±75 menit), lalu menyusuri waduk dengan perahu 'klotok' untuk melihat pulau-pulau seperti Pinus, Rusa, Seran, dan Bekantan.",
   "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Bendungan+Riam+Kanan+Aranio",
   "image": "https://meratusgeopark.org/wp-content/uploads/2023/10/26-Bendungan-Riam-Kanan-600x338.jpg",
   "source": "https://meratusgeopark.org/situs-bendungan-riam-kanan/",
@@ -360,7 +337,7 @@ const initialData = {
   "rating": 4.6,
   "distance": 60,
   "time": 80,
-  "description": "Pulau Pinus adalah pulau di tengah Waduk Riam Kanan, dengan hutan pinus berumur puluhan tahun. Setelah tiba di tepi waduk Desa Tiwingan Lama, pengunjung lanjut naik perahu klotok sejauh ±1,4 km untuk mencapai pulau. Pulau ini dulunya adalah bukit warga sebelum dibendung, dulu ditanami pinus agar tahan air.",
+  "description": "Pulau Pinus adalah pulau di tengah Waduk Riam Kanan, dengan hutan pinus berumur puluhan tahun. Setelah tiba di tepi waduk Desa Tiwingan Lama, pengunjung lanjut naik perahu klotok sejauh ±1,4 km untuk mencapai pulau. Pulau ini dulunya adalah bukit warga sebelum dibendung, dulu ditanami pinus agar tahan air.",
   "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Pulau+Pinus+Riam+Kanan",
   "image": "https://meratusgeopark.org/wp-content/uploads/2025/04/33-Pulau-Pinus-600x400.jpg",
   "source": "https://meratusgeopark.org/situs-pulau-pinus/",
@@ -368,11 +345,8 @@ const initialData = {
   "openDays": "Setiap Hari",
   "openHours": "08.00–17.00"
   }
-
-
 ],
   "kulinerKhas": [
-    
     {
         "name": "Ketupat Kandangan Kaum",
         "address": "Jl. Pangeran Antasari, Melayu, Banjarmasin Tengah, Kota Banjarmasin, Kalimantan Selatan",
@@ -387,7 +361,6 @@ const initialData = {
         "source": "https://www.instagram.com/warung.kaum/?hl=en",
         "selected": true
     },
-
      {
         "name": "Soto Banjar Bang Amat",
         "address": "Jl. Sultan Adam No.12, Sungai Miai, Kec. Banjarmasin Utara, Kota Banjarmasin, Kalimantan Selatan 70123",
@@ -444,7 +417,6 @@ const initialData = {
         "source": "https://www.instagram.com/tenda_biru_bjb/?hl=en",
         "selected": true
         }
-
   ],
   "olehOleh": [
     {
@@ -511,60 +483,28 @@ export default function WisataPage() {
   const [activeCategory, setActiveCategory] = useState('destinasiWisata');
   const [data, setData] = useState(initialData);
   const [filterCategory, setFilterCategory] = useState('Semua');
-  // Define sections order for navigation
   const sections = ['destinasiWisata', 'kulinerKhas', 'olehOleh'];
   
-  // User state - null means guest
-  const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   
   // Mobile states
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [showMobileSidebar, setShowMobileSidebar] = useState(false);
   
-  // Admin CRUD states
-  const [showAddForm, setShowAddForm] = useState(false);
-  const [editingItem, setEditingItem] = useState(null);
-
-  const [formData, setFormData] = useState({
-    id: '',
-    name: '',
-    address: '',
-    category: '',
-    rating: 4.0,
-    distance: 0,
-    time: 0,
-    description: '',
-    image: '',
-    googleMapsUrl: '',
-    source: ''
-  });
-  
-  // Check user authentication and load data
+  // Load data on mount
   useEffect(() => {
-    // Load user from localStorage (could be null for guests)
-    const userData = JSON.parse(localStorage.getItem('user') || 'null');
-    
-    // Set user state (will be null for guests)
-    setUser(userData);
-    
-    // Load saved data from localStorage
-    let savedData = JSON.parse(localStorage.getItem('wisataData') || 'null');
+    const savedData = JSON.parse(localStorage.getItem('wisataData') || 'null');
     
     if (savedData) {
-      // Pastikan semua item dalam data memiliki properti source
       for (const category in savedData) {
         if (Array.isArray(savedData[category])) {
           savedData[category] = savedData[category].map(item => ({
             ...item,
-            // Jika item belum punya source, buat berdasarkan nama
             source: item.source || `https://www.google.com/search?q=${encodeURIComponent(item.name)}`
           }));
         }
       }
       
       setData(savedData);
-      // Simpan kembali data yang sudah dipastikan memiliki source
       localStorage.setItem('wisataData', JSON.stringify(savedData));
     }
     
@@ -575,46 +515,45 @@ export default function WisataPage() {
   const handleCategoryClick = (category) => {
     setActiveCategory(category);
     setFilterCategory('Semua');
-    setShowMobileSidebar(false); // Close mobile sidebar
   };
 
   // Navigation functions for mobile
-const getCurrentSectionIndex = () => sections.indexOf(activeCategory);
+  const getCurrentSectionIndex = () => sections.indexOf(activeCategory);
 
-const goToPrevSection = () => {
-  const currentIndex = getCurrentSectionIndex();
-  if (currentIndex > 0) {
-    setActiveCategory(sections[currentIndex - 1]);
-    setFilterCategory('Semua');
-  }
-};
+  const goToPrevSection = () => {
+    const currentIndex = getCurrentSectionIndex();
+    if (currentIndex > 0) {
+      setActiveCategory(sections[currentIndex - 1]);
+      setFilterCategory('Semua');
+    }
+  };
 
-const goToNextSection = () => {
-  const currentIndex = getCurrentSectionIndex();
-  if (currentIndex < sections.length - 1) {
-    setActiveCategory(sections[currentIndex + 1]);
-    setFilterCategory('Semua');
-  }
-};
+  const goToNextSection = () => {
+    const currentIndex = getCurrentSectionIndex();
+    if (currentIndex < sections.length - 1) {
+      setActiveCategory(sections[currentIndex + 1]);
+      setFilterCategory('Semua');
+    }
+  };
 
-const hasPrevSection = () => getCurrentSectionIndex() > 0;
-const hasNextSection = () => getCurrentSectionIndex() < sections.length - 1;
+  const hasPrevSection = () => getCurrentSectionIndex() > 0;
+  const hasNextSection = () => getCurrentSectionIndex() < sections.length - 1;
 
-const getPrevSectionName = () => {
-  const currentIndex = getCurrentSectionIndex();
-  if (currentIndex > 0) {
-    return categoryLabels[sections[currentIndex - 1]];
-  }
-  return '';
-};
+  const getPrevSectionName = () => {
+    const currentIndex = getCurrentSectionIndex();
+    if (currentIndex > 0) {
+      return categoryLabels[sections[currentIndex - 1]];
+    }
+    return '';
+  };
 
-const getNextSectionName = () => {
-  const currentIndex = getCurrentSectionIndex();
-  if (currentIndex < sections.length - 1) {
-    return categoryLabels[sections[currentIndex + 1]];
-  }
-  return '';
-};
+  const getNextSectionName = () => {
+    const currentIndex = getCurrentSectionIndex();
+    if (currentIndex < sections.length - 1) {
+      return categoryLabels[sections[currentIndex + 1]];
+    }
+    return '';
+  };
 
   // Handle navigation item click
   const handleNavItemClick = () => {
@@ -637,151 +576,6 @@ const getNextSectionName = () => {
     return items.filter(item => item.category === filterCategory);
   };
   
-  // Form handlers (only available for logged-in users)
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
-  
-  const handleImageChange = (e) => {
-    const { value } = e.target;
-    setFormData({
-      ...formData,
-      image: value
-    });
-  };
-
-  // Handle logout
-  const handleLogout = () => {
-    localStorage.removeItem('user');
-    window.location.href = '/login';
-  };
-  
-  // Handle download data
-  const handleDownloadData = () => {
-    // Get the latest data from state
-    const dataToDownload = JSON.stringify(data, null, 2);
-        
-    // Create a blob with the data
-    const blob = new Blob([dataToDownload], { type: 'application/json' });
-        
-    // Create a URL for the blob
-    const url = URL.createObjectURL(blob);
-        
-    // Create a link element
-    const link = document.createElement('a');
-        
-    // Set link properties
-    link.href = url;
-    link.download = `kasulampua_wisata_${new Date().toISOString().split('T')[0]}.json`;
-        
-    // Append to body
-    document.body.appendChild(link);
-        
-    // Trigger download
-    link.click();
-        
-    // Clean up
-    URL.revokeObjectURL(url);
-    document.body.removeChild(link);
-  };
-  
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    // Generate a random ID if adding new item
-    const newItem = {
-      ...formData,
-      id: editingItem ? editingItem.id : `${activeCategory}${Date.now()}`,
-      // Generate Google Maps URL if not provided
-      googleMapsUrl: formData.googleMapsUrl || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(formData.name + ', ' + formData.address)}`,
-       // Generate Source URL if not provided
-      source: formData.source || `https://www.google.com/search?q=${encodeURIComponent(formData.name)}`
-    };
-    
-    // Update data based on whether we're editing or adding
-    if (editingItem) {
-      const updatedItems = data[activeCategory].map(item => 
-        item.id === editingItem.id ? newItem : item
-      );
-      setData({
-        ...data,
-        [activeCategory]: updatedItems
-      });
-    } else {
-      setData({
-        ...data,
-        [activeCategory]: [...data[activeCategory], newItem]
-      });
-    }
-    
-    // Save to localStorage
-    localStorage.setItem('wisataData', JSON.stringify({
-      ...data,
-      [activeCategory]: editingItem 
-        ? data[activeCategory].map(item => item.id === editingItem.id ? newItem : item)
-        : [...data[activeCategory], newItem]
-    }));
-    
-    // Reset form
-    resetForm();
-  };
-  
-  const resetForm = () => {
-    setFormData({
-      id: '',
-      name: '',
-      address: '',
-      category: '',
-      rating: 4.0,
-      distance: 0,
-      time: 0,
-      description: '',
-      image: '',
-      googleMapsUrl: '',
-      source: ''
-    });
-    setEditingItem(null);
-    setShowAddForm(false);
-  };
-  
-  const handleEdit = (item) => {
-    setEditingItem(item);
-    setFormData({
-      ...item
-    });
-    setShowAddForm(true);
-  };
-  
-  const handleDelete = (id) => {
-    if (window.confirm('Apakah Anda yakin ingin menghapus item ini?')) {
-      const updatedItems = data[activeCategory].filter(item => item.id !== id);
-      const updatedData = {
-        ...data,
-        [activeCategory]: updatedItems
-      };
-      setData(updatedData);
-      
-      // Save to localStorage
-      localStorage.setItem('wisataData', JSON.stringify(updatedData));
-    }
-  };
-  
-  // Function to handle clicking outside modals
-  const handleModalOutsideClick = (e, setterFunction) => {
-    // If the click target is the backdrop (not a descendant)
-    if (e.target === e.currentTarget) {
-      setterFunction(false);
-      // Reset form states if closing the add/edit form
-      if (setterFunction === setShowAddForm) {
-        resetForm();
-      }
-    }
-  };
-  
   const categoryLabels = {
     destinasiWisata: 'Destinasi Wisata',
     kulinerKhas: 'Kuliner Khas',
@@ -800,12 +594,9 @@ const getNextSectionName = () => {
   const subcategories = getSubcategories();
   const filteredItems = getFilteredItems();
   
-  // Check if user is logged in and has admin privileges
-  const isAdmin = user && user.isLoggedIn;
-  
   return (
     <div className="min-h-screen bg-white">
-      {/* Header - Updated to match homepage */}
+      {/* Header */}
       <header className="bg-white text-gray-800 shadow-sm fixed top-0 left-0 right-0 z-50">
         <div className="container mx-auto px-3 py-2">
           <div className="flex items-center justify-between">
@@ -842,15 +633,6 @@ const getNextSectionName = () => {
               <Link href="/tentang" className="font-medium text-gray-800 hover:text-snowymint-900 transition-colors">
                 Tentang
               </Link>
-              {isAdmin && (
-                <button 
-                  onClick={handleLogout} 
-                  className="bg-snowymint-800 text-white px-3 py-1 rounded text-sm flex items-center hover:bg-snowymint-900 transition-colors cursor-pointer"
-                >
-                  <LogoutIcon />
-                  <span className="ml-1">Logout</span>
-                </button>
-              )}
             </nav>
             
             {/* Mobile Menu Button */}
@@ -887,36 +669,6 @@ const getNextSectionName = () => {
                   </button>
                 ))}
               </div>
-              
-              {/* Admin menu items for mobile */}
-              {isAdmin && (
-                <div className="border-t mt-2 pt-2">
-                  <button 
-                    onClick={() => {
-                      setShowAddForm(true);
-                      setMobileMenuOpen(false);
-                    }} 
-                    className="block w-full text-left py-2 hover:bg-snowymint-300 px-3 rounded text-sm"
-                  >
-                    Tambah {categoryLabels[activeCategory]}
-                  </button>
-                  <button 
-                    onClick={() => {
-                      handleDownloadData();
-                      setMobileMenuOpen(false);
-                    }} 
-                    className="block w-full text-left py-2 hover:bg-snowymint-300 px-3 rounded text-sm"
-                  >
-                    Download Data
-                  </button>
-                  <button 
-                    onClick={handleLogout} 
-                    className="block w-full text-left py-2 hover:bg-snowymint-300 px-3 rounded text-sm text-red-600"
-                  >
-                    Logout
-                  </button>
-                </div>
-              )}
             </nav>
           )}
         </div>
@@ -972,7 +724,7 @@ const getNextSectionName = () => {
                 <span className="font-medium">{categoryLabels[activeCategory]}</span>
               </div>
 
-            {/* Mobile Section Navigation - Only visible on mobile */}
+            {/* Mobile Section Navigation */}
             <div className="md:hidden mb-6">
             <div className="flex items-center justify-between bg-gray-50 rounded-lg p-3">
                 <button
@@ -1011,25 +763,6 @@ const getNextSectionName = () => {
                 {categoryLabels[activeCategory]} di Kalimantan Selatan
               </h1>
             </div>
-            
-            {/* Admin buttons - hidden for mobile in nav */}
-            {isAdmin && (
-              <div className="hidden md:flex space-x-3">
-                <button 
-                  onClick={() => setShowAddForm(true)} 
-                  className="bg-snowymint-800 text-white px-4 py-2 rounded hover:bg-snowymint-900 transition-colors cursor-pointer"
-                >
-                  Tambah {categoryLabels[activeCategory]}
-                </button>
-                <button 
-                  onClick={handleDownloadData} 
-                  className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors cursor-pointer flex items-center"
-                >
-                  <DownloadIcon />
-                  <span className="ml-2">Download Data</span>
-                </button>
-              </div>
-            )}
           </div>
           
           {/* Sidapakase App Info - Mobile */}
@@ -1066,7 +799,7 @@ const getNextSectionName = () => {
             </select>
           </div>
           
-         {/* Item Grid - Updated to match homepage theme */}
+         {/* Item Grid */}
         <section className="py-4 md:py-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-8">
             {filteredItems.map((item) => (
@@ -1114,7 +847,7 @@ const getNextSectionName = () => {
                     </div>
                   </div>
                   
-                  <div className="mt-3 flex flex-wrap gap-2">
+                  <div className="mt-3">
                     <a 
                       href={item.googleMapsUrl || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.name + ', ' + item.address)}`}
                       target="_blank"
@@ -1123,201 +856,11 @@ const getNextSectionName = () => {
                     >
                       Lihat Peta →
                     </a>
-                    
-                    {/* Only show edit and delete buttons for admins */}
-                    {isAdmin && (
-                      <>
-                        <button 
-                          onClick={() => handleEdit(item)} 
-                          className="bg-blue-500 text-white px-3 py-1 rounded text-sm hover:bg-blue-600 transition-colors cursor-pointer"
-                        >
-                          Edit
-                        </button>
-                        <button 
-                          onClick={() => handleDelete(item.id)} 
-                          className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors cursor-pointer"
-                        >
-                          Hapus
-                        </button>
-                      </>
-                    )}
                   </div>
                 </div>
               </div>
             ))}
           </div>
-          
-          {/* Add/Edit Form Modal - Only show if admin is logged in */}
-          {isAdmin && showAddForm && (
-            <div 
-              className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
-              onClick={(e) => handleModalOutsideClick(e, setShowAddForm)}
-            >
-              <div className="bg-white p-4 md:p-6 rounded-lg w-full max-w-lg max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-                <h2 className="text-lg md:text-xl font-bold mb-4">
-                  {editingItem ? `Edit ${categoryLabels[activeCategory]}` : `Tambah ${categoryLabels[activeCategory]} Baru`}
-                </h2>
-                
-                <form onSubmit={handleSubmit}>
-                  <div className="grid grid-cols-1 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Nama</label>
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        className="w-full p-2 border rounded"
-                        required
-                      />
-                    </div>
-                    
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Alamat</label>
-                      <input
-                        type="text"
-                        name="address"
-                        value={formData.address}
-                        onChange={handleInputChange}
-                        className="w-full p-2 border rounded"
-                        required
-                      />
-                    </div>
-                    
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Kategori</label>
-                      <input
-                        type="text"
-                        name="category"
-                        value={formData.category}
-                        onChange={handleInputChange}
-                        className="w-full p-2 border rounded"
-                        required
-                      />
-                    </div>
-                    
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Rating</label>
-                        <input
-                          type="number"
-                          name="rating"
-                          value={formData.rating}
-                          onChange={handleInputChange}
-                          step="0.1"
-                          min="1"
-                          max="5"
-                          className="w-full p-2 border rounded"
-                          required
-                        />
-                      </div>
-                      
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Jarak (km)</label>
-                        <input
-                          type="number"
-                          name="distance"
-                          value={formData.distance}
-                          onChange={handleInputChange}
-                          step="0.1"
-                          min="0"
-                          className="w-full p-2 border rounded"
-                          required
-                        />
-                      </div>
-                      
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Waktu (menit)</label>
-                        <input
-                          type="number"
-                          name="time"
-                          value={formData.time}
-                          onChange={handleInputChange}
-                          min="0"
-                          className="w-full p-2 border rounded"
-                          required
-                        />
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Deskripsi</label>
-                      <textarea
-                        name="description"
-                        value={formData.description}
-                        onChange={handleInputChange}
-                        className="w-full p-2 border rounded"
-                        rows="3"
-                      ></textarea>
-                    </div>
-                    
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">URL Gambar</label>
-                        <input
-                            type="url"
-                            name="image"
-                            value={formData.image}
-                            onChange={handleImageChange}
-                            placeholder="https://example.com/image.jpg"
-                            className="w-full p-2 border rounded"
-                        />
-                        {formData.image && (
-                            <div className="mt-2 h-40 overflow-hidden rounded">
-                            <img src={formData.image} alt="Preview" className="w-full h-full object-cover" />
-                            </div>
-                        )}
-                    </div>
-                    
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Link Google Maps (opsional)</label>
-                      <input
-                        type="url"
-                        name="googleMapsUrl"
-                        value={formData.googleMapsUrl}
-                        onChange={handleInputChange}
-                        placeholder="https://www.google.com/maps/..."
-                        className="w-full p-2 border rounded"
-                      />
-                      <p className="text-xs text-gray-500 mt-1">
-                        Kosongkan untuk generate otomatis berdasarkan nama dan alamat
-                      </p>
-                    </div>
-
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Link Sumber (opsional)</label>
-                        <input
-                            type="url"
-                            name="source"
-                            value={formData.source}
-                            onChange={handleInputChange}
-                            placeholder="https://www.example.com/..."
-                            className="w-full p-2 border rounded"
-                        />
-                        <p className="text-xs text-gray-500 mt-1">
-                            Kosongkan untuk generate otomatis pencarian Google berdasarkan nama
-                        </p>
-                    </div>
-                    
-                    <div className="flex flex-col sm:flex-row justify-end gap-3 mt-2">
-                      <button
-                        type="button"
-                        onClick={resetForm}
-                        className="px-4 py-2 border rounded text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer"
-                      >
-                        Batal
-                      </button>
-                      <button
-                        type="submit"
-                        className="px-4 py-2 bg-snowymint-800 text-white rounded hover:bg-snowymint-900 transition-colors cursor-pointer"
-                      >
-                        {editingItem ? 'Update' : 'Simpan'}
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          )}
           </section>
         </main>
       </div>
@@ -1326,7 +869,7 @@ const getNextSectionName = () => {
       <footer className="bg-snowymint-950 text-white py-6 md:py-8">
         <div className="container mx-auto px-3 md:px-4">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-4">
-            {/* Logo and Description - Full width on mobile */}
+            {/* Logo and Description */}
             <div className="col-span-2 md:col-span-1 text-left">
               <div className="flex items-center justify-start mb-3">
                 <img 
